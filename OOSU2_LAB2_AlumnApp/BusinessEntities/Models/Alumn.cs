@@ -9,8 +9,11 @@ namespace BusinessEntities.Models
 {
     public class Alumn : IAlumn
     {
+        public int användarId { get; set; }
+        public string förnamn { get; set; }
+        public string efternamn { get; set; }
         public string användarnamn { get; set; }
         public string lösenord { get; set; }
-        public List<string> kompetenser { get; set; }
+        public ICollection<Program> program { get; set; }
     }
 }

@@ -8,10 +8,12 @@ namespace BusinessEntities.Models.Interfaces
 {
     interface IAlumn
     {
-
+        int användarId { get; set; }
+        string förnamn { get; set; }
+        string efternamn { get; set; }
         string användarnamn { get; set; }
         string lösenord { get; set; }
-        List<string> kompetenser { get; set; }
+        ICollection<Program> program { get; set; }
 
 }
 }

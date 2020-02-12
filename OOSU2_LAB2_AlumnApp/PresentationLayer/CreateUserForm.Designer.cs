@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.alumnRadioBtn = new System.Windows.Forms.RadioButton();
-            this.radioButtonAdmin = new System.Windows.Forms.RadioButton();
+            this.adminRadioBtn = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxUserNameInput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,16 +50,16 @@
             this.alumnRadioBtn.Text = "Alumn";
             this.alumnRadioBtn.UseVisualStyleBackColor = true;
             // 
-            // radioButtonAdmin
+            // adminRadioBtn
             // 
-            this.radioButtonAdmin.AutoSize = true;
-            this.radioButtonAdmin.Location = new System.Drawing.Point(95, 24);
-            this.radioButtonAdmin.Name = "radioButtonAdmin";
-            this.radioButtonAdmin.Size = new System.Drawing.Size(85, 17);
-            this.radioButtonAdmin.TabIndex = 1;
-            this.radioButtonAdmin.TabStop = true;
-            this.radioButtonAdmin.Text = "Administratör";
-            this.radioButtonAdmin.UseVisualStyleBackColor = true;
+            this.adminRadioBtn.AutoSize = true;
+            this.adminRadioBtn.Location = new System.Drawing.Point(95, 24);
+            this.adminRadioBtn.Name = "adminRadioBtn";
+            this.adminRadioBtn.Size = new System.Drawing.Size(85, 17);
+            this.adminRadioBtn.TabIndex = 1;
+            this.adminRadioBtn.TabStop = true;
+            this.adminRadioBtn.Text = "Administratör";
+            this.adminRadioBtn.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -137,7 +137,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxUserNameInput);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButtonAdmin);
+            this.Controls.Add(this.adminRadioBtn);
             this.Controls.Add(this.alumnRadioBtn);
             this.Name = "CreateUserForm";
             this.Text = "Skapa konto";
@@ -150,7 +150,7 @@
         #endregion
 
         private System.Windows.Forms.RadioButton alumnRadioBtn;
-        private System.Windows.Forms.RadioButton radioButtonAdmin;
+        private System.Windows.Forms.RadioButton adminRadioBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxUserNameInput;
         private System.Windows.Forms.Label label2;

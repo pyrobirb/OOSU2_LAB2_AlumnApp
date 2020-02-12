@@ -8,5 +8,8 @@ namespace BusinessEntities.Models.Interfaces
 {
     interface IProgram
     {
+        int programId { get; set; }
+        string namn { get; set; }
+        
     }
 }
