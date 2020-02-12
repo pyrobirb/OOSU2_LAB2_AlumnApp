@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButtonAlumn = new System.Windows.Forms.RadioButton();
+            this.alumnRadioBtn = new System.Windows.Forms.RadioButton();
             this.radioButtonAdmin = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxUserNameInput = new System.Windows.Forms.TextBox();
@@ -39,16 +39,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // radioButtonAlumn
+            // alumnRadioBtn
             // 
-            this.radioButtonAlumn.AutoSize = true;
-            this.radioButtonAlumn.Location = new System.Drawing.Point(23, 24);
-            this.radioButtonAlumn.Name = "radioButtonAlumn";
-            this.radioButtonAlumn.Size = new System.Drawing.Size(54, 17);
-            this.radioButtonAlumn.TabIndex = 0;
-            this.radioButtonAlumn.TabStop = true;
-            this.radioButtonAlumn.Text = "Alumn";
-            this.radioButtonAlumn.UseVisualStyleBackColor = true;
+            this.alumnRadioBtn.AutoSize = true;
+            this.alumnRadioBtn.Location = new System.Drawing.Point(23, 24);
+            this.alumnRadioBtn.Name = "alumnRadioBtn";
+            this.alumnRadioBtn.Size = new System.Drawing.Size(54, 17);
+            this.alumnRadioBtn.TabIndex = 0;
+            this.alumnRadioBtn.TabStop = true;
+            this.alumnRadioBtn.Text = "Alumn";
+            this.alumnRadioBtn.UseVisualStyleBackColor = true;
             // 
             // radioButtonAdmin
             // 
@@ -138,9 +138,10 @@
             this.Controls.Add(this.textBoxUserNameInput);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.radioButtonAdmin);
-            this.Controls.Add(this.radioButtonAlumn);
+            this.Controls.Add(this.alumnRadioBtn);
             this.Name = "CreateUserForm";
             this.Text = "Skapa konto";
+            this.Load += new System.EventHandler(this.CreateUserForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,7 +149,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButtonAlumn;
+        private System.Windows.Forms.RadioButton alumnRadioBtn;
         private System.Windows.Forms.RadioButton radioButtonAdmin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxUserNameInput;

@@ -15,6 +15,12 @@ namespace PresentationLayer
         public CreateUserForm()
         {
             InitializeComponent();
+            alumnRadioBtn.Checked = true;
+        }
+
+        private void CreateUserForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

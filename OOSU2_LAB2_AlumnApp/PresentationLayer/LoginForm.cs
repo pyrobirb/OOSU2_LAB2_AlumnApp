@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessEntities.Models;
+using DataLayer.Contexts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,13 @@ namespace PresentationLayer
 {
     public partial class LoginForm : Form
     {
+        AlumnKontaktContext akc = new AlumnKontaktContext();
         public LoginForm()
         {
             InitializeComponent();
+            akc.Database.EnsureDeleted();
+            akc.Database.EnsureCreated();
+
         }
 
         private void labelCreateAccount_Click(object sender, EventArgs e)
@@ -28,6 +34,11 @@ namespace PresentationLayer
             {
                 Close();
             }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
