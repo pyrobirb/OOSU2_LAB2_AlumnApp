@@ -42,12 +42,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Models\Aktivitet.cs" />
+    <Compile Include="Models\Alumn.cs" />
+    <Compile Include="Models\Erbjudande.cs" />
+    <Compile Include="Models\IAktivitet.cs" />
+    <Compile Include="Models\IAlumn.cs" />
+    <Compile Include="Models\IErbjudande.cs" />
+    <Compile Include="Models\IInformationsutskick.cs" />
+    <Compile Include="Models\Informationsutskick.cs" />
+    <Compile Include="Models\IPersonal.cs" />
+    <Compile Include="Models\Personal.cs" />
+>>>>>>> parent of 3b9bf29... fdg
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+=======
+>>>>>>> parent of 3b9bf29... fdg
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
       <Project>{0619d5ae-08a0-4071-99da-dc91e8ee3992}</Project>
       <Name>DataLayer</Name>
