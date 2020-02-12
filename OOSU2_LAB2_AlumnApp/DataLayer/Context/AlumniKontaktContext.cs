@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLayer.Contexts
+namespace BusinessLayer.Models
 {
-    class Alumn
+    class AlumniKontaktContext
     {
     }
 }

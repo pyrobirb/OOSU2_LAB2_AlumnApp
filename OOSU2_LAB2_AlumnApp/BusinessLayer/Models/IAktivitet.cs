@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer
+namespace BusinessLayer.Models
 {
-    public class DataLayer
+    interface IAktivitet
     {
     }
 }
