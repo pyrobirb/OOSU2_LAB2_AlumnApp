@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLayer;
+using BusinessLayer.Contexts;
 
 namespace PresentationLayer
 {
@@ -17,6 +19,14 @@ namespace PresentationLayer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
+
+            AlumniKontaktContext alumnikontaktcontext = new AlumniKontaktContext();
+
+            alumnikontaktcontext.Database.EnsureDeleted();
+            alumnikontaktcontext.Database.EnsureCreated();
+
+            Console.ReadLine();
+
         }
     }
 }
