@@ -135,6 +135,10 @@
   </ItemGroup>
   <ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    <Compile Include="Context\AlumniKontaktContext.cs" />
+>>>>>>> parent of 3b9bf29... fdg
 =======
     <Compile Include="Context\AlumniKontaktContext.cs" />
 >>>>>>> parent of 3b9bf29... fdg
@@ -146,9 +150,13 @@
     <None Include="packages.config" />
   </ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="Context\" />
   </ItemGroup>
+=======
+  <ItemGroup />
+>>>>>>> parent of 3b9bf29... fdg
 =======
   <ItemGroup />
 >>>>>>> parent of 3b9bf29... fdg
