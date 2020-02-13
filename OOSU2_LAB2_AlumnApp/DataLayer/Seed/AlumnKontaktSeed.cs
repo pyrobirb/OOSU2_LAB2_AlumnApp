@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using BusinessEntities.Contexts.Junction;
 
 namespace DataLayer.Seed
 {
@@ -13,85 +15,102 @@ namespace DataLayer.Seed
         public static void Populate(AlumnKontaktContext alumnKontaktContext)
         {
 
-            Program systemvetpr = new Program()
+            //Alumn-seed
+            AlumnKontaktContext akc = new AlumnKontaktContext();
+            if (alumnKontaktContext.Alumner.Count() == 0)
             {
-                namn = "Systemvetare"
-            };
-            Program programDekon = new Program()
-            {
-                namn = "Dataekonom"
-            };
-            Program Dataing = new Program()
-            {
-                namn = "Dataingenjör"
-            };
-            Program Sysark = new Program()
-            {
-                namn = "Systemarkitekt"
-            };
-
-            alumnKontaktContext.Alumner.Add(new Alumn()
-            {
-                användarnamn = "kalle123",
-                förnamn = "Kalle",
-                efternamn = "Larsson",
-                lösenord = "123kalle",
-                program = new List<Program>()
+                try
                 {
-                    programDekon,
-                    Dataing
+                    StreamReader inputFile = new StreamReader("GeneratedAlumns.csv");
 
+                    while (true)
+                    {
+                        string row = inputFile.ReadLine();
+                        if (row == null || row == "") break;
+
+                        string[] parts = row.Split(',');
+
+                        Alumn a = new Alumn();
+                        a.Förnamn = parts[0];
+                        a.Efternamn = parts[1];
+                        a.Användarnamn = parts[2];
+                        a.Epost = parts[3];
+                        a.Lösenord = parts[4];
+
+                        akc.Alumner.Add(a);
+
+                    }
+                    inputFile.Close();
+                    akc.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Kunde ej ladda Alumner från CSV-fil!");
+                    throw;
+                }
+            }
+
+            //Program-seed
+            if (alumnKontaktContext.Programs.Count() == 0)
+            {
+                try
+                {
+                    StreamReader inputFile = new StreamReader("GeneratedPrograms.csv");
+
+                    while (true)
+                    {
+                        string row = inputFile.ReadLine();
+                        if (row == null || row == "") break;
+
+                        string[] parts = row.Split(',');
+
+                        Program p = new Program();
+                        p.Namn = parts[0];
+                        
+
+                        akc.Programs.Add(p);
+
+                    }
+                    inputFile.Close();
+                    akc.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Kunde ej ladda Program från CSV-fil!");
+                    throw;
                 }
 
-            });
-            alumnKontaktContext.Alumner.Add(new Alumn()
-            {
-                användarnamn = "petra12",
-                förnamn = "Petra",
-                efternamn = "Klarsson",
-                lösenord = "petra123",
-                program = new List<Program>()
+
+                //AlumnProgram-seed
+
+                foreach (Alumn alumn in akc.Alumner)
                 {
-                    new Program()
+                    foreach (Program program in akc.Programs)
                     {
-                        namn = "Högskoleingenjör"
-                    },
-                    systemvetpr
+                        AlumnProgram ap = new AlumnProgram()
+                        {
+                            Alumn = alumn,
+                            Program = program,
+                            AlumnId = alumn.AnvändarId,
+                            ProgramID = program.ProgramId
+                        };
 
+                        if (alumn.AlumnPrograms == null || program.AlumnPrograms == null)
+                        {
+                            ICollection<AlumnProgram> apc = new List<AlumnProgram>();
+                            alumn.AlumnPrograms = apc;
+                            program.AlumnPrograms = apc;
+                        }
+
+                        alumn.AlumnPrograms.Add(ap);
+                        program.AlumnPrograms.Add(ap);
+                        akc.AlumnPrograms.Add(ap);
+                        continue;
+                    }
+                    continue;
                 }
-            });
-            alumnKontaktContext.Alumner.Add(new Alumn()
-            {
-                användarnamn = "Petter1",
-                förnamn = "Petter",
-                efternamn = "Dessne",
-                lösenord = "pdessnen",
-                program = new List<Program>()
-                {
-                    new Program()
-                    {
-                        namn = "Dataekonom"
-                    },
-                    new Program()
-                    {
-                        namn = "Dataingenjör"
-                    },
-                    systemvetpr
-                }
-            });
 
-
-            alumnKontaktContext.Programs.Add(systemvetpr);
-            alumnKontaktContext.Programs.Add(programDekon);
-            alumnKontaktContext.Programs.Add(Dataing);
-            alumnKontaktContext.Programs.Add(Sysark);
-
-
-
-
-
-
-
+            }
 
 
         }

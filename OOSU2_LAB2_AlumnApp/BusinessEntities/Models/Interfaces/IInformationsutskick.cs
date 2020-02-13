@@ -8,5 +8,9 @@ namespace BusinessEntities.Models.Interfaces
 {
     interface IInformationsutskick
     {
+        string utskicksId { get; set; }
+        DateTime utskicksdatum { get; set; }
+
+
     }
 }

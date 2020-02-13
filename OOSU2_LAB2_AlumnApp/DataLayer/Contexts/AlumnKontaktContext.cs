@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusinessEntities.Models;
+using BusinessEntities.Contexts.Junction;
 
 namespace DataLayer.Contexts
 {
@@ -19,11 +20,26 @@ namespace DataLayer.Contexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<AlumnProgram>()
+                .HasKey(ap => new { ap.AlumnId, ap.ProgramID });
+
+            modelBuilder.Entity<AlumnProgram>()
+                .HasOne(ap => ap.Alumn)
+                .WithMany(p => p.AlumnPrograms)
+                .HasForeignKey(ap => ap.AlumnId);
+
+            modelBuilder.Entity<AlumnProgram>()
+                .HasOne(ap => ap.Program)
+                .WithMany(p => p.AlumnPrograms)
+                .HasForeignKey(ap => ap.ProgramID);
+            
+            
             base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Alumn> Alumner { get; set; }
         public DbSet<Program> Programs { get; set; }
+        public DbSet<AlumnProgram> AlumnPrograms { get; set; }
 
 
     }

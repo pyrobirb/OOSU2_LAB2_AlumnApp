@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessEntities.Contexts.Junction;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,8 @@ namespace BusinessEntities.Models.Interfaces
 {
     interface IProgram
     {
-        int programId { get; set; }
-        string namn { get; set; }
-        
+        int ProgramId { get; set; }
+        string Namn { get; set; }
+        ICollection<AlumnProgram> AlumnPrograms { get; set; }
     }
 }

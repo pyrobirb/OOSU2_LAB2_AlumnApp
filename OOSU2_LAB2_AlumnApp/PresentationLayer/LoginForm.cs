@@ -1,5 +1,6 @@
 ﻿using BusinessEntities.Models;
 using DataLayer.Contexts;
+using DataLayer.Seed;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +16,16 @@ namespace PresentationLayer
     public partial class LoginForm : Form
     {
         AlumnKontaktContext akc = new AlumnKontaktContext();
+        Alumn LoggedInAlumnID { get; set; }
+        Personal LoggedInPersonalID { get; set; }
         public LoginForm()
         {
             InitializeComponent();
             akc.Database.EnsureDeleted();
             akc.Database.EnsureCreated();
+            AlumnKontaktSeed.Populate(akc);
+            LoggedInAlumnID = null;
+            LoggedInPersonalID = null;
 
         }
 
@@ -40,5 +46,36 @@ namespace PresentationLayer
         {
 
         }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            //ValidateUserLogin(userNameTextBox.Text, passwordTextBox.Text);
+        }
+
+        //public bool ValidateUserLogin(string username, string password)
+        //{
+        //    var alumner = akc.Alumner;
+        //    foreach (Alumn alumn in alumner)
+        //    {
+        //        if (username == alumn.Användarnamn && password == alumn.Lösenord)
+        //        {
+        //            LoggedInAlumnID = alumn;
+        //            return true;
+        //        }
+        //    }
+
+
+        //    var personal = akc.Personal;
+        //    foreach (Personal personal in personal)
+        //    {
+        //        if (username == personal.)
+        //        {
+
+        //        }
+        //    }
+
+
+
+        //}
     }
 }

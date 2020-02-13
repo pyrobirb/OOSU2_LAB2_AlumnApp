@@ -1,6 +1,8 @@
-﻿using BusinessEntities.Models.Interfaces;
+﻿using BusinessEntities.Contexts.Junction;
+using BusinessEntities.Models.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +11,13 @@ namespace BusinessEntities.Models
 {
     public class Alumn : IAlumn
     {
-        public int användarId { get; set; }
-        public string förnamn { get; set; }
-        public string efternamn { get; set; }
-        public string användarnamn { get; set; }
-        public string lösenord { get; set; }
-        public ICollection<Program> program { get; set; }
+        [Key]
+        public int AnvändarId { get; set; }
+        public string Förnamn { get; set; }
+        public string Efternamn { get; set; }
+        public string Användarnamn { get; set; }
+        public string Epost { get; set; }
+        public string Lösenord { get; set; }
+        public virtual ICollection<AlumnProgram> AlumnPrograms { get; set; }
     }
 }

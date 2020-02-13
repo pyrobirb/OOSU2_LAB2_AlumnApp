@@ -32,8 +32,8 @@
             this.btnLogIn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxUserName = new System.Windows.Forms.TextBox();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.userNameTextBox = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.labelCreateAccount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -55,6 +55,7 @@
             this.btnLogIn.TabIndex = 1;
             this.btnLogIn.Text = "Logga in";
             this.btnLogIn.UseVisualStyleBackColor = false;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // label2
             // 
@@ -74,19 +75,19 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Lösenord:";
             // 
-            // textBoxUserName
+            // userNameTextBox
             // 
-            this.textBoxUserName.Location = new System.Drawing.Point(31, 66);
-            this.textBoxUserName.Name = "textBoxUserName";
-            this.textBoxUserName.Size = new System.Drawing.Size(157, 20);
-            this.textBoxUserName.TabIndex = 4;
+            this.userNameTextBox.Location = new System.Drawing.Point(31, 66);
+            this.userNameTextBox.Name = "userNameTextBox";
+            this.userNameTextBox.Size = new System.Drawing.Size(157, 20);
+            this.userNameTextBox.TabIndex = 4;
             // 
-            // textBoxPassword
+            // passwordTextBox
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(32, 106);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(156, 20);
-            this.textBoxPassword.TabIndex = 5;
+            this.passwordTextBox.Location = new System.Drawing.Point(32, 106);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(156, 20);
+            this.passwordTextBox.TabIndex = 5;
             // 
             // labelCreateAccount
             // 
@@ -107,8 +108,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(217, 197);
             this.Controls.Add(this.labelCreateAccount);
-            this.Controls.Add(this.textBoxPassword);
-            this.Controls.Add(this.textBoxUserName);
+            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.userNameTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnLogIn);
@@ -127,8 +128,8 @@
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxUserName;
-        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.TextBox userNameTextBox;
+        private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label labelCreateAccount;
     }
 }
