@@ -13,7 +13,8 @@ namespace DataLayer.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=OOSU2Lab2TestProject;Trusted_Connection=True; Integrated Security=True;MultipleActiveResultSets=true");
+            optionsBuilder
+                .UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=OOSU2Lab2TestProject;Trusted_Connection=True; Integrated Security=True;MultipleActiveResultSets=true");
             base.OnConfiguring(optionsBuilder);
 
         }
@@ -36,6 +37,7 @@ namespace DataLayer.Contexts
             
             base.OnModelCreating(modelBuilder);
         }
+
 
         public DbSet<Alumn> Alumner { get; set; }
         public DbSet<Program> Programs { get; set; }
