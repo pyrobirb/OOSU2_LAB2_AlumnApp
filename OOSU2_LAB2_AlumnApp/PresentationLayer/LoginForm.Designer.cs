@@ -35,6 +35,7 @@
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.labelCreateAccount = new System.Windows.Forms.Label();
+            this.varningLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -49,13 +50,14 @@
             // btnLogIn
             // 
             this.btnLogIn.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnLogIn.Location = new System.Drawing.Point(70, 139);
+            this.btnLogIn.Location = new System.Drawing.Point(72, 157);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(75, 23);
             this.btnLogIn.TabIndex = 1;
             this.btnLogIn.Text = "Logga in";
             this.btnLogIn.UseVisualStyleBackColor = false;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
+            this.btnLogIn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnLogIn_KeyDown);
             // 
             // label2
             // 
@@ -88,25 +90,36 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(156, 20);
             this.passwordTextBox.TabIndex = 5;
+            this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyDown);
             // 
             // labelCreateAccount
             // 
             this.labelCreateAccount.AutoSize = true;
             this.labelCreateAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCreateAccount.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.labelCreateAccount.Location = new System.Drawing.Point(73, 169);
+            this.labelCreateAccount.Location = new System.Drawing.Point(75, 187);
             this.labelCreateAccount.Name = "labelCreateAccount";
             this.labelCreateAccount.Size = new System.Drawing.Size(68, 13);
             this.labelCreateAccount.TabIndex = 6;
             this.labelCreateAccount.Text = "Skapa konto";
             this.labelCreateAccount.Click += new System.EventHandler(this.labelCreateAccount_Click);
             // 
+            // varningLabel
+            // 
+            this.varningLabel.AutoSize = true;
+            this.varningLabel.ForeColor = System.Drawing.Color.Crimson;
+            this.varningLabel.Location = new System.Drawing.Point(29, 129);
+            this.varningLabel.Name = "varningLabel";
+            this.varningLabel.Size = new System.Drawing.Size(0, 13);
+            this.varningLabel.TabIndex = 7;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(217, 197);
+            this.ClientSize = new System.Drawing.Size(217, 213);
+            this.Controls.Add(this.varningLabel);
             this.Controls.Add(this.labelCreateAccount);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.userNameTextBox);
@@ -131,6 +144,7 @@
         private System.Windows.Forms.TextBox userNameTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label labelCreateAccount;
+        private System.Windows.Forms.Label varningLabel;
     }
 }
 

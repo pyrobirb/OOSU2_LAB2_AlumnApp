@@ -22,5 +22,25 @@ namespace PresentationLayer
         {
 
         }
+
+        private void alumnRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void adminRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void skapaKontoBtn_Click(object sender, EventArgs e)
+        {
+            if (alumnRadioBtn.Checked == true)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
 }

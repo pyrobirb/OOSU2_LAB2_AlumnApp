@@ -9,14 +9,13 @@ using BusinessEntities.Contexts.Junction;
 
 namespace DataLayer.Contexts
 {
-    public class AlumnKontaktContext : DbContext
+    public class DatabaseContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
                 .UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=OOSU2Lab2TestProject;Trusted_Connection=True; Integrated Security=True;MultipleActiveResultSets=true");
             base.OnConfiguring(optionsBuilder);
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -41,6 +40,7 @@ namespace DataLayer.Contexts
 
         public DbSet<Alumn> Alumner { get; set; }
         public DbSet<Program> Programs { get; set; }
+        public DbSet<Personal> Personal{ get; set; }
         public DbSet<AlumnProgram> AlumnPrograms { get; set; }
 
 

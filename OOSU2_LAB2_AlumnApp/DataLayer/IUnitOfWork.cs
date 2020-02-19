@@ -11,6 +11,8 @@ namespace DataLayer
     public interface IUnitOfWork
     {
         IAlumnRepository AlumnRepository { get; set; }
+        IPersonalRepository PersonalRepository{ get; set; }
+
 
         void Commit();
     }

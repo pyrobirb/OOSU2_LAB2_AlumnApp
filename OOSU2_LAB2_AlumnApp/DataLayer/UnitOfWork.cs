@@ -11,19 +11,21 @@ namespace DataLayer
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly AlumnKontaktContext _context;
-        public UnitOfWork(AlumnKontaktContext alumnKontaktContext)
+        private readonly DatabaseContext _context;
+        public UnitOfWork(DatabaseContext databaseContext)
         {
-            _context = alumnKontaktContext;
+            _context = databaseContext;
             AlumnRepository = new AlumnRepository(_context);
+            PersonalRepository = new PersonalRepository(_context);
         }
 
 
         public IAlumnRepository AlumnRepository { get; set; }
+        public IPersonalRepository PersonalRepository{ get; set; }
 
         public void Commit()
         {
-            throw new NotImplementedException();
+            //_context = SaveChanges();
         }
     }
 }

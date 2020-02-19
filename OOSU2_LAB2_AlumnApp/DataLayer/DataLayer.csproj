@@ -137,10 +137,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contexts\AlumnKontaktContext.cs" />
+    <Compile Include="Contexts\DatabaseContext.cs" />
+    <Compile Include="InterfacesAndRepositories\Interfaces\IPersonalRepository.cs" />
     <Compile Include="InterfacesAndRepositories\Repositories\AlumnRepository.cs" />
     <Compile Include="InterfacesAndRepositories\Interfaces\IAlumnRepository.cs" />
     <Compile Include="InterfacesAndRepositories\Interfaces\IRepository.cs" />
+    <Compile Include="InterfacesAndRepositories\Repositories\PersonalRepository.cs" />
     <Compile Include="InterfacesAndRepositories\Repositories\Repository.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

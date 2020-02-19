@@ -12,7 +12,7 @@ namespace DataLayer.Seed
 {
     public class AlumnKontaktSeed
     {
-        public static void Populate(AlumnKontaktContext alumnKontaktContext)
+        public static void Populate(DatabaseContext databaseContext)
         {
 
             Alumn alumn1 = new Alumn()
@@ -21,9 +21,9 @@ namespace DataLayer.Seed
                 Förnamn = "Kalle",
                 Efternamn = "Nalle",
                 Epost = "kalle@nalle.se",
-                Lösenord = "kallenallen"
+                Lösenord = "kalle1"
             };
-            alumnKontaktContext.Alumner.Add(alumn1);
+            databaseContext.Alumner.Add(alumn1);
 
             Alumn alumn2 = new Alumn()
             {
@@ -33,7 +33,7 @@ namespace DataLayer.Seed
                 Epost = "Lalle@Halle.se",
                 Lösenord = "LalleHalle"
             };
-            alumnKontaktContext.Alumner.Add(alumn2);
+            databaseContext.Alumner.Add(alumn2);
 
 
             Program program1 = new Program()
@@ -47,28 +47,39 @@ namespace DataLayer.Seed
 
             };
 
-            alumnKontaktContext.AlumnPrograms.Add(new AlumnProgram()
+            databaseContext.AlumnPrograms.Add(new AlumnProgram()
             {
                 Alumn = alumn1,
                 Program = program1
             });
-            alumnKontaktContext.AlumnPrograms.Add(new AlumnProgram()
+            databaseContext.AlumnPrograms.Add(new AlumnProgram()
             {
                 Alumn = alumn1,
                 Program = program2
             });
-            alumnKontaktContext.AlumnPrograms.Add(new AlumnProgram()
+            databaseContext.AlumnPrograms.Add(new AlumnProgram()
             {
                 Alumn = alumn2,
                 Program = program1
             });
 
 
-            alumnKontaktContext.SaveChanges();
+            Personal personal1 = new Personal()
+            {
+                Användarnamn = "einar1",
+                Förnamn = "Einar",
+                Efternamn = "Svensson",
+                Epost = "einar@alumnpersonal.se",
+                Lösenord = "einar2"
+
+            };
+            databaseContext.Personal.Add(personal1);
+
+            databaseContext.SaveChanges();
 
         }
 
-        public static void PopulateAlumner(AlumnKontaktContext alumnKontaktContext)
+        public static void PopulateAlumner(DatabaseContext alumnKontaktContext)
         {
             //if (alumnKontaktContext.Alumner.Count() == 0)
             //{
@@ -103,7 +114,7 @@ namespace DataLayer.Seed
             //    }
             //}
         }
-        public static void PopulatePrograms(AlumnKontaktContext alumnKontaktContext)
+        public static void PopulatePrograms(DatabaseContext alumnKontaktContext)
         {
             //if (alumnKontaktContext.Programs.Count() == 0)
             //{
@@ -136,7 +147,7 @@ namespace DataLayer.Seed
 
             //}
         }
-        public static void PopulateAlumnPrograms(AlumnKontaktContext alumnKontaktContext)
+        public static void PopulateAlumnPrograms(DatabaseContext alumnKontaktContext)
         {
 
             //if (alumnKontaktContext.AlumnPrograms.Count() == 0)

@@ -11,9 +11,9 @@ namespace DataLayer.InterfacesAndRepositories.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        protected readonly AlumnKontaktContext Context;
+        protected readonly DatabaseContext Context;
 
-        public Repository(AlumnKontaktContext context)
+        public Repository(DatabaseContext context)
         {
             Context = context;
         }
