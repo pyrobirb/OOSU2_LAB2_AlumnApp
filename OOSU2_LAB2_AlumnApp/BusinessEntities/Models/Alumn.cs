@@ -12,12 +12,16 @@ namespace BusinessEntities.Models
     public class Alumn : IAlumn
     {
         [Key]
-        public int AnvändarId { get; set; }
+        public int AnvändarID { get; set; }
         public string Förnamn { get; set; }
         public string Efternamn { get; set; }
         public string Användarnamn { get; set; }
         public string Epost { get; set; }
         public string Lösenord { get; set; }
         public virtual ICollection<AlumnProgram> AlumnPrograms { get; set; }
+        public virtual ICollection<AlumnKompetens> AlumnKompetenser { get; set; }
+        public virtual ICollection<InformationsutskickAlumn> InformationsutskickAlumn { get; set; }
+        public virtual ICollection<AlumnAktivitet> AlumnAktiviteter { get; set; }
+
     }
 }

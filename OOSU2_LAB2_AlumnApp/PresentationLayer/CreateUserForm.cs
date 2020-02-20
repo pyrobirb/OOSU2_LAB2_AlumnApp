@@ -56,7 +56,7 @@ namespace PresentationLayer
             if (användarNamnTextBox.Text != "" && lösenordTextBox.Text != "")
             {
 
-                bm.uiw.AlumnRepository.Add(new Alumn()
+                bm.LäggTillAlumn(new Alumn()
                 {
                     Användarnamn = användarNamnTextBox.Text,
                     Förnamn = förnamnTextBox.Text,
@@ -74,7 +74,7 @@ namespace PresentationLayer
             if (användarNamnTextBox.Text != "" && lösenordTextBox.Text != "")
             {
 
-                bm.uiw.PersonalRepository.Add(new Personal()
+                bm.LäggTillPersonal(new Personal()
                 {
                     Användarnamn = användarNamnTextBox.Text,
                     Förnamn = förnamnTextBox.Text,

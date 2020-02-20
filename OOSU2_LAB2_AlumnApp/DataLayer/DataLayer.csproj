@@ -138,11 +138,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexts\DatabaseContext.cs" />
+    <Compile Include="InterfacesAndRepositories\Interfaces\IAktivitetRepository.cs" />
+    <Compile Include="InterfacesAndRepositories\Interfaces\IInformationsutskickRepository.cs" />
+    <Compile Include="InterfacesAndRepositories\Interfaces\IKompetensRepository.cs" />
     <Compile Include="InterfacesAndRepositories\Interfaces\IPersonalRepository.cs" />
+    <Compile Include="InterfacesAndRepositories\Interfaces\IProgramRepository.cs" />
+    <Compile Include="InterfacesAndRepositories\Repositories\AktivitetRepository.cs" />
     <Compile Include="InterfacesAndRepositories\Repositories\AlumnRepository.cs" />
     <Compile Include="InterfacesAndRepositories\Interfaces\IAlumnRepository.cs" />
     <Compile Include="InterfacesAndRepositories\Interfaces\IRepository.cs" />
+    <Compile Include="InterfacesAndRepositories\Repositories\InformationsutskickRepository.cs" />
+    <Compile Include="InterfacesAndRepositories\Repositories\KompetensRepository.cs" />
     <Compile Include="InterfacesAndRepositories\Repositories\PersonalRepository.cs" />
+    <Compile Include="InterfacesAndRepositories\Repositories\ProgramRepository.cs" />
     <Compile Include="InterfacesAndRepositories\Repositories\Repository.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

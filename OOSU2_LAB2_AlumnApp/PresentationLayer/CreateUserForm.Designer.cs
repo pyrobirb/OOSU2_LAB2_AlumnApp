@@ -65,10 +65,10 @@
             this.personalRadioBtn.AutoSize = true;
             this.personalRadioBtn.Location = new System.Drawing.Point(66, 9);
             this.personalRadioBtn.Name = "personalRadioBtn";
-            this.personalRadioBtn.Size = new System.Drawing.Size(85, 17);
+            this.personalRadioBtn.Size = new System.Drawing.Size(66, 17);
             this.personalRadioBtn.TabIndex = 1;
             this.personalRadioBtn.TabStop = true;
-            this.personalRadioBtn.Text = "Administratör";
+            this.personalRadioBtn.Text = "Personal";
             this.personalRadioBtn.UseVisualStyleBackColor = true;
             this.personalRadioBtn.CheckedChanged += new System.EventHandler(this.adminRadioBtn_CheckedChanged);
             // 
@@ -83,12 +83,11 @@
             // 
             // användarNamnTextBox
             // 
-            this.användarNamnTextBox.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.användarNamnTextBox.ForeColor = System.Drawing.Color.Black;
             this.användarNamnTextBox.Location = new System.Drawing.Point(26, 65);
             this.användarNamnTextBox.Name = "användarNamnTextBox";
             this.användarNamnTextBox.Size = new System.Drawing.Size(210, 20);
             this.användarNamnTextBox.TabIndex = 3;
-            this.användarNamnTextBox.Text = "Användarnamn";
             // 
             // label2
             // 
@@ -101,12 +100,11 @@
             // 
             // lösenordTextBox
             // 
-            this.lösenordTextBox.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.lösenordTextBox.ForeColor = System.Drawing.Color.Black;
             this.lösenordTextBox.Location = new System.Drawing.Point(26, 222);
             this.lösenordTextBox.Name = "lösenordTextBox";
             this.lösenordTextBox.Size = new System.Drawing.Size(210, 20);
             this.lösenordTextBox.TabIndex = 5;
-            this.lösenordTextBox.Text = "Minst 10 tecken";
             // 
             // skapaKontoBtn
             // 
@@ -171,12 +169,11 @@
             // 
             // epostTextBox
             // 
-            this.epostTextBox.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.epostTextBox.ForeColor = System.Drawing.Color.Black;
             this.epostTextBox.Location = new System.Drawing.Point(26, 182);
             this.epostTextBox.Name = "epostTextBox";
             this.epostTextBox.Size = new System.Drawing.Size(210, 20);
             this.epostTextBox.TabIndex = 15;
-            this.epostTextBox.Text = "abc@cde.se";
             // 
             // imageList1
             // 

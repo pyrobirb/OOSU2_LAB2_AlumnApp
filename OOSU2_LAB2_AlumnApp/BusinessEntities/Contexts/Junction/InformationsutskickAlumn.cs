@@ -5,12 +5,12 @@ using System.Text;
 
 namespace BusinessEntities.Contexts.Junction
 {
-    public class AlumnProgram
+    public class InformationsutskickAlumn
     {
         public int AlumnID { get; set; }
         public virtual Alumn Alumn { get; set; }
 
-        public int ProgramID { get; set; }
-        public virtual Program Program { get; set; }
+        public int InformationsutskickID { get; set; }
+        public virtual Informationsutskick Informationsutskick { get; set; }
     }
 }

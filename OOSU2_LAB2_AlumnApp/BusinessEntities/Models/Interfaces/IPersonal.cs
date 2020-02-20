@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessEntities.Contexts.Junction;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +10,13 @@ namespace BusinessEntities.Models.Interfaces
     interface IPersonal
     {
 
-        int PersonalId { get; set; }
+        int PersonalID { get; set; }
         string Förnamn { get; set; }
         string Efternamn { get; set; }
         string Användarnamn { get; set; }
         string Epost { get; set; }
         string Lösenord { get; set; }
+
+        ICollection<PersonalInformationsutskick> PersonalInformationsutskick { get; set; }
     }
 }

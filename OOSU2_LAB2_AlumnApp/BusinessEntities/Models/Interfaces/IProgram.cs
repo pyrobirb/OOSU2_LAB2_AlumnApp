@@ -9,7 +9,7 @@ namespace BusinessEntities.Models.Interfaces
 {
     interface IProgram
     {
-        int ProgramId { get; set; }
+        int ProgramID { get; set; }
         string Namn { get; set; }
         ICollection<AlumnProgram> AlumnPrograms { get; set; }
     }

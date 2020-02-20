@@ -12,7 +12,7 @@ namespace BusinessEntities.Models
     public class Program : IProgram
     {
         [Key]
-        public int ProgramId { get; set; }
+        public int ProgramID { get; set; }
         public string Namn { get; set; }
         public virtual ICollection<AlumnProgram> AlumnPrograms { get; set; }
     }

@@ -24,5 +24,13 @@ namespace BusinessLayer
         {
             return uiw.PersonalRepository.HämtaPersonalKonto(username, password);
         }
+        public void LäggTillAlumn(Alumn alumn)
+        {
+            uiw.AlumnRepository.Add(alumn);
+        }
+        public void LäggTillPersonal(Personal personal)
+        {
+            uiw.PersonalRepository.Add(personal);
+        }
     }
 }

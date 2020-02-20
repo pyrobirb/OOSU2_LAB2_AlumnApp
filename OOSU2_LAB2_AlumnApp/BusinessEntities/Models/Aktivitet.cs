@@ -1,4 +1,5 @@
-﻿using BusinessEntities.Models.Interfaces;
+﻿using BusinessEntities.Contexts.Junction;
+using BusinessEntities.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,7 +12,7 @@ namespace BusinessEntities.Models
     public class Aktivitet : IAktivitet
     {
         [Key]
-        public string AktivitetsID { get; set; }
+        public string AktivitetID { get; set; }
         public string Titel { get; set; }
         public string Kontaktperson { get; set; }
         public string Ansvarig { get; set; }
@@ -20,6 +21,8 @@ namespace BusinessEntities.Models
         public DateTime Slutdatum { get; set; }
         public string Beskrivning { get; set; }
 
-
+        public virtual ICollection<InformationsutskickAktivitet> InformationsutskickAktivitet { get; set; }
+        public virtual ICollection<AlumnAktivitet> AlumnAktiviteter { get; set; }
+        
     }
 }
