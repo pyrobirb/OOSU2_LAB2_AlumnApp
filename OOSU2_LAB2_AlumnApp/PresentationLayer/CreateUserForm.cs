@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessEntities.Models;
+using BusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace PresentationLayer
 {
     public partial class CreateUserForm : Form
     {
+        BusinessManager bm = new BusinessManager();
+
         public CreateUserForm()
         {
             InitializeComponent();
@@ -34,13 +38,52 @@ namespace PresentationLayer
         private void skapaKontoBtn_Click(object sender, EventArgs e)
         {
             if (alumnRadioBtn.Checked == true)
+                SkapaKontoAlumn();
+
+            if (personalRadioBtn.Checked == true)
+                SkapaKontoPersonal();
+
+            DialogResult = DialogResult.OK;
+        }
+
+        private void avbrytBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+        }
+
+        public void SkapaKontoAlumn()
+        {
+            if (användarNamnTextBox.Text != "" && lösenordTextBox.Text != "")
             {
 
+                bm.uiw.AlumnRepository.Add(new Alumn()
+                {
+                    Användarnamn = användarNamnTextBox.Text,
+                    Förnamn = förnamnTextBox.Text,
+                    Efternamn = efternamnTextBox.Text,
+                    Epost = epostTextBox.Text,
+                    Lösenord = lösenordTextBox.Text
+
+                });
             }
-            else
+            MessageBox.Show("Hej " + förnamnTextBox.Text + "! Ditt nya Alumn-konto är nu skapat, nu kan du logga in!");
+        }
+
+        public void SkapaKontoPersonal()
+        {
+            if (användarNamnTextBox.Text != "" && lösenordTextBox.Text != "")
             {
 
+                bm.uiw.PersonalRepository.Add(new Personal()
+                {
+                    Användarnamn = användarNamnTextBox.Text,
+                    Förnamn = förnamnTextBox.Text,
+                    Efternamn = efternamnTextBox.Text,
+                    Epost = epostTextBox.Text,
+                    Lösenord = lösenordTextBox.Text
+                });
             }
+            MessageBox.Show("Hej " + förnamnTextBox.Text + "! Ditt nya Personal-konto är nu skapat, nu kan du logga in!");
         }
     }
 }

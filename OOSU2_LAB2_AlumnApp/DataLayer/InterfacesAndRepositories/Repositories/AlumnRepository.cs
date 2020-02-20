@@ -16,5 +16,13 @@ namespace DataLayer.InterfacesAndRepositories.Repositories
 
         }
 
+        public Alumn HämtaAlumnKonto(string användarnamn, string lösenord)
+        {
+            using (var db = new DatabaseContext())
+            {
+                return db.Alumner.Where(x => x.Användarnamn.ToLower() == användarnamn.ToLower() && x.Lösenord == lösenord).FirstOrDefault();
+            }
+        }
+
     }
 }

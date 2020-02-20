@@ -40,7 +40,7 @@ namespace DataLayer.Contexts
 
         public DbSet<Alumn> Alumner { get; set; }
         public DbSet<Program> Programs { get; set; }
-        public DbSet<Personal> Personal{ get; set; }
+        public DbSet<Personal> Personal { get; set; }
         public DbSet<AlumnProgram> AlumnPrograms { get; set; }
 
 

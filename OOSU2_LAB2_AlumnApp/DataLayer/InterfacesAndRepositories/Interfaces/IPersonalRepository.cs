@@ -9,6 +9,6 @@ namespace DataLayer.InterfacesAndRepositories.Interfaces
 {
     public interface IPersonalRepository : IRepository<Personal>
     {
-
+        Personal HämtaPersonalKonto(string användarnamn, string lösenord);
     }
 }

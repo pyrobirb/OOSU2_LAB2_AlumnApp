@@ -25,7 +25,7 @@ namespace DataLayer
 
         public void Commit()
         {
-            //_context = SaveChanges();
+            _context.SaveChanges();
         }
     }
 }

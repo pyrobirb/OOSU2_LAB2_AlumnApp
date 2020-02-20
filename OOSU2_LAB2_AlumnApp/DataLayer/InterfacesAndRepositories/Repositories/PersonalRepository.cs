@@ -15,5 +15,13 @@ namespace DataLayer.InterfacesAndRepositories.Repositories
         {
 
         }
+
+        public Personal HämtaPersonalKonto(string användarnamn, string lösenord)
+        {
+            using (var db = new DatabaseContext())
+            {
+                return db.Personal.Where(x => x.Användarnamn.ToLower() == användarnamn.ToLower() && x.Lösenord == lösenord.ToString()).FirstOrDefault();
+            }
+        }
     }
 }

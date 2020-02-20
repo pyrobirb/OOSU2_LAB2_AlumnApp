@@ -10,6 +10,7 @@ namespace DataLayer.InterfacesAndRepositories.Interfaces
 {
     public interface IAlumnRepository : IRepository<Alumn>
     {
-        //GetAllSystemvetare osv...
+        Alumn HämtaAlumnKonto(string användarnamn, string lösenord);
+
     }
 }
