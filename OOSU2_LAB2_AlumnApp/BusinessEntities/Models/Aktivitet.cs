@@ -12,7 +12,7 @@ namespace BusinessEntities.Models
     public class Aktivitet : IAktivitet
     {
         [Key]
-        public string AktivitetID { get; set; }
+        public int AktivitetID { get; set; }
         public string Titel { get; set; }
         public string Kontaktperson { get; set; }
         public string Ansvarig { get; set; }

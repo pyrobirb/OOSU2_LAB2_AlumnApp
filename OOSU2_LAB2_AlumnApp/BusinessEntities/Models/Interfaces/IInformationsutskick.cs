@@ -9,7 +9,7 @@ namespace BusinessEntities.Models.Interfaces
 {
     interface IInformationsutskick
     {
-        string utskicksID { get; set; }
+        int utskicksID { get; set; }
         DateTime utskicksdatum { get; set; }
 
         ICollection<InformationsutskickAlumn> InformationsutskickAlumn { get; set; }

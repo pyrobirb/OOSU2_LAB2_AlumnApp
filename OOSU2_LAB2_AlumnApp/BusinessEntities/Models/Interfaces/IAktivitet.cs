@@ -9,7 +9,7 @@ namespace BusinessEntities.Models.Interfaces
 {
     interface IAktivitet
     {
-        string AktivitetID { get; set; }
+        int AktivitetID { get; set; }
         string Titel { get; set; }
         string Kontaktperson { get; set; }
         string Ansvarig { get; set; }
