@@ -82,6 +82,7 @@ namespace PresentationLayer
                     Epost = epostTextBox.Text,
                     Lösenord = lösenordTextBox.Text
                 });
+                bm.Commit();
             }
             MessageBox.Show("Hej " + förnamnTextBox.Text + "! Ditt nya Personal-konto är nu skapat, nu kan du logga in!");
         }
