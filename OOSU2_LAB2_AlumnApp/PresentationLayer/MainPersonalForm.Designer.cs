@@ -31,7 +31,6 @@
             this.tabControlMainAdmin = new System.Windows.Forms.TabControl();
             this.tabPageCreateActivity = new System.Windows.Forms.TabPage();
             this.btnCreateActivity = new System.Windows.Forms.Button();
-            this.listBoxCreateActivity = new System.Windows.Forms.ListBox();
             this.dateTimePickerSlut = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
@@ -64,12 +63,16 @@
             this.textBoxEditTitle = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPageMakeEmailList = new System.Windows.Forms.TabPage();
-            this.listBoxAllAlumns = new System.Windows.Forms.ListBox();
+            this.comboBoxFilterAlumns = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnCreateAlumnCSV = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.btnCreateAlumnCSV = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.comboBoxFilterAlumns = new System.Windows.Forms.ComboBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.tabControlMainAdmin.SuspendLayout();
             this.tabPageCreateActivity.SuspendLayout();
             this.tabPageEditActivity.SuspendLayout();
@@ -90,8 +93,8 @@
             // 
             // tabPageCreateActivity
             // 
+            this.tabPageCreateActivity.Controls.Add(this.richTextBox1);
             this.tabPageCreateActivity.Controls.Add(this.btnCreateActivity);
-            this.tabPageCreateActivity.Controls.Add(this.listBoxCreateActivity);
             this.tabPageCreateActivity.Controls.Add(this.dateTimePickerSlut);
             this.tabPageCreateActivity.Controls.Add(this.label7);
             this.tabPageCreateActivity.Controls.Add(this.dateTimePickerStart);
@@ -121,14 +124,6 @@
             this.btnCreateActivity.TabIndex = 14;
             this.btnCreateActivity.Text = "Skapa aktivitet";
             this.btnCreateActivity.UseVisualStyleBackColor = true;
-            // 
-            // listBoxCreateActivity
-            // 
-            this.listBoxCreateActivity.FormattingEnabled = true;
-            this.listBoxCreateActivity.Location = new System.Drawing.Point(250, 24);
-            this.listBoxCreateActivity.Name = "listBoxCreateActivity";
-            this.listBoxCreateActivity.Size = new System.Drawing.Size(238, 186);
-            this.listBoxCreateActivity.TabIndex = 13;
             // 
             // dateTimePickerSlut
             // 
@@ -406,10 +401,13 @@
             // 
             // tabPageMakeEmailList
             // 
+            this.tabPageMakeEmailList.Controls.Add(this.label19);
+            this.tabPageMakeEmailList.Controls.Add(this.label18);
+            this.tabPageMakeEmailList.Controls.Add(this.comboBox1);
+            this.tabPageMakeEmailList.Controls.Add(this.checkedListBox1);
             this.tabPageMakeEmailList.Controls.Add(this.comboBoxFilterAlumns);
             this.tabPageMakeEmailList.Controls.Add(this.label17);
             this.tabPageMakeEmailList.Controls.Add(this.btnCreateAlumnCSV);
-            this.tabPageMakeEmailList.Controls.Add(this.listBoxAllAlumns);
             this.tabPageMakeEmailList.Controls.Add(this.label16);
             this.tabPageMakeEmailList.Location = new System.Drawing.Point(4, 22);
             this.tabPageMakeEmailList.Name = "tabPageMakeEmailList";
@@ -418,18 +416,38 @@
             this.tabPageMakeEmailList.Text = "Skapa utskickslista";
             this.tabPageMakeEmailList.UseVisualStyleBackColor = true;
             // 
-            // listBoxAllAlumns
+            // comboBoxFilterAlumns
             // 
-            this.listBoxAllAlumns.FormattingEnabled = true;
-            this.listBoxAllAlumns.Location = new System.Drawing.Point(22, 72);
-            this.listBoxAllAlumns.Name = "listBoxAllAlumns";
-            this.listBoxAllAlumns.Size = new System.Drawing.Size(348, 212);
-            this.listBoxAllAlumns.TabIndex = 1;
+            this.comboBoxFilterAlumns.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.comboBoxFilterAlumns.FormattingEnabled = true;
+            this.comboBoxFilterAlumns.Location = new System.Drawing.Point(116, 27);
+            this.comboBoxFilterAlumns.Name = "comboBoxFilterAlumns";
+            this.comboBoxFilterAlumns.Size = new System.Drawing.Size(167, 21);
+            this.comboBoxFilterAlumns.TabIndex = 4;
+            this.comboBoxFilterAlumns.Text = "Välj filter";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(19, 10);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(86, 13);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Filtrera lista efter:";
+            // 
+            // btnCreateAlumnCSV
+            // 
+            this.btnCreateAlumnCSV.Location = new System.Drawing.Point(381, 153);
+            this.btnCreateAlumnCSV.Name = "btnCreateAlumnCSV";
+            this.btnCreateAlumnCSV.Size = new System.Drawing.Size(116, 56);
+            this.btnCreateAlumnCSV.TabIndex = 2;
+            this.btnCreateAlumnCSV.Text = "Skapa .CSV med valda alumner";
+            this.btnCreateAlumnCSV.UseVisualStyleBackColor = true;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(19, 56);
+            this.label16.Location = new System.Drawing.Point(19, 58);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(55, 13);
             this.label16.TabIndex = 0;
@@ -444,42 +462,58 @@
             this.btnLogOut.Text = "Logga ut";
             this.btnLogOut.UseVisualStyleBackColor = true;
             // 
-            // btnCreateAlumnCSV
+            // richTextBox1
             // 
-            this.btnCreateAlumnCSV.Location = new System.Drawing.Point(381, 153);
-            this.btnCreateAlumnCSV.Name = "btnCreateAlumnCSV";
-            this.btnCreateAlumnCSV.Size = new System.Drawing.Size(116, 56);
-            this.btnCreateAlumnCSV.TabIndex = 2;
-            this.btnCreateAlumnCSV.Text = "Skapa .CSV med valda alumner";
-            this.btnCreateAlumnCSV.UseVisualStyleBackColor = true;
+            this.richTextBox1.Location = new System.Drawing.Point(250, 23);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(238, 181);
+            this.richTextBox1.TabIndex = 15;
+            this.richTextBox1.Text = "";
             // 
-            // label17
+            // checkedListBox1
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(19, 10);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(59, 13);
-            this.label17.TabIndex = 3;
-            this.label17.Text = "Filtrera lista";
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(22, 83);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(348, 199);
+            this.checkedListBox1.TabIndex = 5;
             // 
-            // comboBoxFilterAlumns
+            // comboBox1
             // 
-            this.comboBoxFilterAlumns.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.comboBoxFilterAlumns.FormattingEnabled = true;
-            this.comboBoxFilterAlumns.Location = new System.Drawing.Point(22, 27);
-            this.comboBoxFilterAlumns.Name = "comboBoxFilterAlumns";
-            this.comboBoxFilterAlumns.Size = new System.Drawing.Size(348, 21);
-            this.comboBoxFilterAlumns.TabIndex = 4;
-            this.comboBoxFilterAlumns.Text = "Välj filter";
+            this.comboBox1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(289, 27);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(208, 21);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.Text = "Välj filter";
             // 
-            // MainAdminForm
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(116, 9);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(46, 13);
+            this.label18.TabIndex = 7;
+            this.label18.Text = "Program";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(286, 9);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(60, 13);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "Kompetens";
+            // 
+            // MainPersonalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 382);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.tabControlMainAdmin);
-            this.Name = "MainAdminForm";
+            this.Name = "MainPersonalForm";
             this.Text = "Administratör";
             this.tabControlMainAdmin.ResumeLayout(false);
             this.tabPageCreateActivity.ResumeLayout(false);
@@ -499,7 +533,6 @@
         private System.Windows.Forms.TabPage tabPageEditActivity;
         private System.Windows.Forms.TabPage tabPageMakeEmailList;
         private System.Windows.Forms.Button btnCreateActivity;
-        private System.Windows.Forms.ListBox listBoxCreateActivity;
         private System.Windows.Forms.DateTimePicker dateTimePickerSlut;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dateTimePickerStart;
@@ -532,9 +565,13 @@
         private System.Windows.Forms.ListBox listBoxEditActivity;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ListBox listBoxAllAlumns;
         private System.Windows.Forms.ComboBox comboBoxFilterAlumns;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnCreateAlumnCSV;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

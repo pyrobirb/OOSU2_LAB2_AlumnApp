@@ -71,6 +71,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabControlAlumn.SuspendLayout();
             this.tabPageUpcommingActivities.SuspendLayout();
             this.tabPageBookedActivities.SuspendLayout();
@@ -108,11 +109,11 @@
             // 
             // btnBookActivity
             // 
-            this.btnBookActivity.Location = new System.Drawing.Point(416, 333);
+            this.btnBookActivity.Location = new System.Drawing.Point(375, 333);
             this.btnBookActivity.Name = "btnBookActivity";
-            this.btnBookActivity.Size = new System.Drawing.Size(131, 23);
+            this.btnBookActivity.Size = new System.Drawing.Size(172, 23);
             this.btnBookActivity.TabIndex = 4;
-            this.btnBookActivity.Text = "Boka vald aktivitet";
+            this.btnBookActivity.Text = "Anmäl mig till valda aktiviteten";
             this.btnBookActivity.UseVisualStyleBackColor = true;
             // 
             // label2
@@ -151,6 +152,7 @@
             // 
             // tabPageBookedActivities
             // 
+            this.tabPageBookedActivities.Controls.Add(this.label15);
             this.tabPageBookedActivities.Controls.Add(this.btnCancelBookedActivity);
             this.tabPageBookedActivities.Controls.Add(this.label4);
             this.tabPageBookedActivities.Controls.Add(this.listBoxBookedActivityInfo);
@@ -488,6 +490,15 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(12, 334);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(364, 13);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Alla aktiviteter som är kopplade till alumnen (den som den har registrerat sig i";
+            // 
             // MainAlumnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -555,5 +566,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Label label15;
     }
 }
