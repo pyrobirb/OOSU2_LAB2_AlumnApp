@@ -63,8 +63,8 @@ namespace PresentationLayer
                     Efternamn = efternamnTextBox.Text,
                     Epost = epostTextBox.Text,
                     Lösenord = lösenordTextBox.Text
-
                 });
+                bm.Commit();
             }
             MessageBox.Show("Hej " + förnamnTextBox.Text + "! Ditt nya Alumn-konto är nu skapat, nu kan du logga in!");
         }

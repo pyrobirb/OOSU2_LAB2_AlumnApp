@@ -78,7 +78,5 @@ namespace DataLayer.Seed
             databaseContext.SaveChanges();
 
         }
-
-       
     }
 }

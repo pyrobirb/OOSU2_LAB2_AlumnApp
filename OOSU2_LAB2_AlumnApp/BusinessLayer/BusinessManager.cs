@@ -32,5 +32,10 @@ namespace BusinessLayer
         {
             uiw.PersonalRepository.Add(personal);
         }
+
+        public void Commit()
+        {
+            uiw.Commit();
+        }
     }
 }
