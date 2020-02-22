@@ -25,8 +25,8 @@ namespace PresentationLayer
             akc.Database.EnsureDeleted();
             akc.Database.EnsureCreated();
             AlumnKontaktSeed.Populate(akc);
-            userNameTextBox.Text = "kalle1";
-            passwordTextBox.Text = "kalle1";
+            userNameTextBox.Text = "einar1";
+            passwordTextBox.Text = "einar2";
 
         }
 

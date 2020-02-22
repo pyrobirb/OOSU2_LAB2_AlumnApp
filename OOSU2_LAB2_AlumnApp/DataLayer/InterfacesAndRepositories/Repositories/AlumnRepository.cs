@@ -1,4 +1,5 @@
-﻿using BusinessEntities.Models;
+﻿using BusinessEntities.Contexts.Junction;
+using BusinessEntities.Models;
 using DataLayer.Contexts;
 using DataLayer.InterfacesAndRepositories.Interfaces;
 using System;
@@ -23,6 +24,20 @@ namespace DataLayer.InterfacesAndRepositories.Repositories
                 return db.Alumner.Where(x => x.Användarnamn.ToLower() == användarnamn.ToLower() && x.Lösenord == lösenord).FirstOrDefault();
             }
         }
+
+        public IQueryable<AlumnProgram> HämtaAlumnerMedProgram(Program program)
+        {
+            var db = new DatabaseContext();
+
+            return db.AlumnPrograms.Where(x => x.Program == program);
+        }
+
+        //public IQueryable<AlumnKompetens> HämtaAlumnerMedKompetens(Kompetens kompetens)
+        //{
+        //    var db = new DatabaseContext();
+
+        //    return db.AlumnKompetens.Where(x => x.Kompetens == kompetens);
+        //}
 
     }
 }

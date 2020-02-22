@@ -23,6 +23,5 @@ namespace BusinessEntities.Models
 
         public virtual ICollection<InformationsutskickAktivitet> InformationsutskickAktivitet { get; set; }
         public virtual ICollection<AlumnAktivitet> AlumnAktiviteter { get; set; }
-        
     }
 }

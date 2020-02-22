@@ -11,6 +11,6 @@ namespace PresentationLayer
     {
         public static Alumn inloggadAlumn { get; set; }
         public static Personal inloggadPersonal { get; set; }
-
+        public static Aktivitet AktuellAktivitet { get; set; }
     }
 }

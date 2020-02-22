@@ -17,11 +17,17 @@ namespace DataLayer
             _context = databaseContext;
             AlumnRepository = new AlumnRepository(_context);
             PersonalRepository = new PersonalRepository(_context);
+            AktivitetRepository = new AktivitetRepository(_context);
+            KompetensRepository = new KompetensRepository(_context);
+            ProgramRepository = new ProgramRepository(_context);
         }
 
 
         public IAlumnRepository AlumnRepository { get; set; }
         public IPersonalRepository PersonalRepository{ get; set; }
+        public IAktivitetRepository AktivitetRepository { get; set; }
+        public IKompetensRepository KompetensRepository { get; set; }
+        public IProgramRepository ProgramRepository { get; set; }
 
         public void Commit()
         {

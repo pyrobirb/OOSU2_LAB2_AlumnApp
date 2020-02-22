@@ -12,7 +12,7 @@ namespace DataLayer
     {
         IAlumnRepository AlumnRepository { get; set; }
         IPersonalRepository PersonalRepository{ get; set; }
-
+        IAktivitetRepository AktivitetRepository { get; set; }
 
         void Commit();
     }

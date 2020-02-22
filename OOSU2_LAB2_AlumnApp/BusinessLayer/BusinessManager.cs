@@ -1,4 +1,5 @@
-﻿using BusinessEntities.Models;
+﻿using BusinessEntities.Contexts.Junction;
+using BusinessEntities.Models;
 using DataLayer;
 using DataLayer.Contexts;
 using System;
@@ -32,6 +33,26 @@ namespace BusinessLayer
         {
             uiw.PersonalRepository.Add(personal);
         }
+
+        public List<Alumn> HämtaAlumnerMedProgram(Program program)
+        {
+            List<Alumn> alumnerMedProgram = new List<Alumn>();
+            foreach (AlumnProgram ap in uiw.AlumnRepository.HämtaAlumnerMedProgram(program))
+            {
+                alumnerMedProgram.Add(uiw.AlumnRepository.GetById(ap.AlumnID));
+            }
+            return alumnerMedProgram;
+        }
+
+        //public List<Alumn> HämtaAlumnerMedKompetens(Kompetens kompetens)
+        //{
+        //    List<Alumn> alumnerMedKompetens = new List<Alumn>();
+        //    foreach (AlumnKompetens ap in uiw.AlumnRepository.HämtaAlumnerMedKompetens(kompetens))
+        //    {
+        //        alumnerMedKompetens.Add(uiw.AlumnRepository.GetById(ap.AlumnID));
+        //    }
+        //    return alumnerMedKompetens;
+        //}
 
         public void Commit()
         {
