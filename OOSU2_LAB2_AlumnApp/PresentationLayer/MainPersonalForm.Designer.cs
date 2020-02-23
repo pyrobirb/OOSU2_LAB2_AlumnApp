@@ -30,6 +30,8 @@
         {
             this.tabControlMainAdmin = new System.Windows.Forms.TabControl();
             this.tabPageCreateActivity = new System.Windows.Forms.TabPage();
+            this.KontaktPersonTxtBox = new System.Windows.Forms.TextBox();
+            this.AnsvarigPersonTxtBox = new System.Windows.Forms.TextBox();
             this.BeskrivningTextBox = new System.Windows.Forms.RichTextBox();
             this.SkapaAktivitetKnapp = new System.Windows.Forms.Button();
             this.SluttidDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -44,6 +46,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageEditActivity = new System.Windows.Forms.TabPage();
+            this.ändraAnsvarigKontaktTxtBox = new System.Windows.Forms.TextBox();
+            this.ändraAnsvarigPersonTxtBox = new System.Windows.Forms.TextBox();
             this.ändraBeskrivningTextBox = new System.Windows.Forms.RichTextBox();
             this.VäljAktivitetComboBox = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -61,7 +65,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tabPageMakeEmailList = new System.Windows.Forms.TabPage();
             this.label20 = new System.Windows.Forms.Label();
-            this.AktivitetCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.KompetensFilterCmbBox = new System.Windows.Forms.ComboBox();
@@ -71,10 +74,10 @@
             this.btnCreateAlumnCSV = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.ändraAnsvarigPersonTxtBox = new System.Windows.Forms.TextBox();
-            this.ändraAnsvarigKontaktTxtBox = new System.Windows.Forms.TextBox();
-            this.AnsvarigPersonTxtBox = new System.Windows.Forms.TextBox();
-            this.KontaktPersonTxtBox = new System.Windows.Forms.TextBox();
+            this.AktivitetCmbBox = new System.Windows.Forms.ComboBox();
+            this.valdaAlumnerListBox = new System.Windows.Forms.ListBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.flyttaÖverAlumnBtn = new System.Windows.Forms.Button();
             this.tabControlMainAdmin.SuspendLayout();
             this.tabPageCreateActivity.SuspendLayout();
             this.tabPageEditActivity.SuspendLayout();
@@ -117,6 +120,20 @@
             this.tabPageCreateActivity.TabIndex = 0;
             this.tabPageCreateActivity.Text = "Skapa aktivitet";
             this.tabPageCreateActivity.UseVisualStyleBackColor = true;
+            // 
+            // KontaktPersonTxtBox
+            // 
+            this.KontaktPersonTxtBox.Location = new System.Drawing.Point(10, 104);
+            this.KontaktPersonTxtBox.Name = "KontaktPersonTxtBox";
+            this.KontaktPersonTxtBox.Size = new System.Drawing.Size(208, 20);
+            this.KontaktPersonTxtBox.TabIndex = 17;
+            // 
+            // AnsvarigPersonTxtBox
+            // 
+            this.AnsvarigPersonTxtBox.Location = new System.Drawing.Point(10, 63);
+            this.AnsvarigPersonTxtBox.Name = "AnsvarigPersonTxtBox";
+            this.AnsvarigPersonTxtBox.Size = new System.Drawing.Size(208, 20);
+            this.AnsvarigPersonTxtBox.TabIndex = 16;
             // 
             // BeskrivningTextBox
             // 
@@ -253,6 +270,20 @@
             this.tabPageEditActivity.Text = "Redigera aktivitet";
             this.tabPageEditActivity.UseVisualStyleBackColor = true;
             // 
+            // ändraAnsvarigKontaktTxtBox
+            // 
+            this.ändraAnsvarigKontaktTxtBox.Location = new System.Drawing.Point(17, 147);
+            this.ändraAnsvarigKontaktTxtBox.Name = "ändraAnsvarigKontaktTxtBox";
+            this.ändraAnsvarigKontaktTxtBox.Size = new System.Drawing.Size(212, 20);
+            this.ändraAnsvarigKontaktTxtBox.TabIndex = 19;
+            // 
+            // ändraAnsvarigPersonTxtBox
+            // 
+            this.ändraAnsvarigPersonTxtBox.Location = new System.Drawing.Point(17, 106);
+            this.ändraAnsvarigPersonTxtBox.Name = "ändraAnsvarigPersonTxtBox";
+            this.ändraAnsvarigPersonTxtBox.Size = new System.Drawing.Size(212, 20);
+            this.ändraAnsvarigPersonTxtBox.TabIndex = 18;
+            // 
             // ändraBeskrivningTextBox
             // 
             this.ändraBeskrivningTextBox.Location = new System.Drawing.Point(250, 66);
@@ -382,8 +413,11 @@
             // 
             // tabPageMakeEmailList
             // 
+            this.tabPageMakeEmailList.Controls.Add(this.flyttaÖverAlumnBtn);
+            this.tabPageMakeEmailList.Controls.Add(this.label21);
+            this.tabPageMakeEmailList.Controls.Add(this.valdaAlumnerListBox);
+            this.tabPageMakeEmailList.Controls.Add(this.AktivitetCmbBox);
             this.tabPageMakeEmailList.Controls.Add(this.label20);
-            this.tabPageMakeEmailList.Controls.Add(this.AktivitetCheckedListBox);
             this.tabPageMakeEmailList.Controls.Add(this.label19);
             this.tabPageMakeEmailList.Controls.Add(this.label18);
             this.tabPageMakeEmailList.Controls.Add(this.KompetensFilterCmbBox);
@@ -407,14 +441,6 @@
             this.label20.Size = new System.Drawing.Size(65, 13);
             this.label20.TabIndex = 10;
             this.label20.Text = "Välj Aktivitet";
-            // 
-            // AktivitetCheckedListBox
-            // 
-            this.AktivitetCheckedListBox.FormattingEnabled = true;
-            this.AktivitetCheckedListBox.Location = new System.Drawing.Point(193, 83);
-            this.AktivitetCheckedListBox.Name = "AktivitetCheckedListBox";
-            this.AktivitetCheckedListBox.Size = new System.Drawing.Size(153, 199);
-            this.AktivitetCheckedListBox.TabIndex = 9;
             // 
             // label19
             // 
@@ -450,8 +476,9 @@
             this.AlumnCheckedListBox.FormattingEnabled = true;
             this.AlumnCheckedListBox.Location = new System.Drawing.Point(22, 83);
             this.AlumnCheckedListBox.Name = "AlumnCheckedListBox";
-            this.AlumnCheckedListBox.Size = new System.Drawing.Size(153, 199);
+            this.AlumnCheckedListBox.Size = new System.Drawing.Size(124, 199);
             this.AlumnCheckedListBox.TabIndex = 5;
+            this.AlumnCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.AlumnCheckedListBox_SelectedIndexChanged);
             // 
             // programFilterCmbBox
             // 
@@ -475,12 +502,13 @@
             // 
             // btnCreateAlumnCSV
             // 
-            this.btnCreateAlumnCSV.Location = new System.Drawing.Point(381, 153);
+            this.btnCreateAlumnCSV.Location = new System.Drawing.Point(352, 245);
             this.btnCreateAlumnCSV.Name = "btnCreateAlumnCSV";
-            this.btnCreateAlumnCSV.Size = new System.Drawing.Size(116, 56);
+            this.btnCreateAlumnCSV.Size = new System.Drawing.Size(145, 37);
             this.btnCreateAlumnCSV.TabIndex = 2;
-            this.btnCreateAlumnCSV.Text = "Skapa .CSV med valda alumner";
+            this.btnCreateAlumnCSV.Text = "Skapa Utskickslista och Generera CSV-fil";
             this.btnCreateAlumnCSV.UseVisualStyleBackColor = true;
+            this.btnCreateAlumnCSV.Click += new System.EventHandler(this.btnCreateAlumnCSV_Click);
             // 
             // label16
             // 
@@ -501,33 +529,40 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // ändraAnsvarigPersonTxtBox
+            // AktivitetCmbBox
             // 
-            this.ändraAnsvarigPersonTxtBox.Location = new System.Drawing.Point(17, 106);
-            this.ändraAnsvarigPersonTxtBox.Name = "ändraAnsvarigPersonTxtBox";
-            this.ändraAnsvarigPersonTxtBox.Size = new System.Drawing.Size(212, 20);
-            this.ändraAnsvarigPersonTxtBox.TabIndex = 18;
+            this.AktivitetCmbBox.FormattingEnabled = true;
+            this.AktivitetCmbBox.Location = new System.Drawing.Point(264, 58);
+            this.AktivitetCmbBox.Name = "AktivitetCmbBox";
+            this.AktivitetCmbBox.Size = new System.Drawing.Size(121, 21);
+            this.AktivitetCmbBox.TabIndex = 11;
             // 
-            // ändraAnsvarigKontaktTxtBox
+            // valdaAlumnerListBox
             // 
-            this.ändraAnsvarigKontaktTxtBox.Location = new System.Drawing.Point(17, 147);
-            this.ändraAnsvarigKontaktTxtBox.Name = "ändraAnsvarigKontaktTxtBox";
-            this.ändraAnsvarigKontaktTxtBox.Size = new System.Drawing.Size(212, 20);
-            this.ändraAnsvarigKontaktTxtBox.TabIndex = 19;
+            this.valdaAlumnerListBox.FormattingEnabled = true;
+            this.valdaAlumnerListBox.Location = new System.Drawing.Point(226, 109);
+            this.valdaAlumnerListBox.Name = "valdaAlumnerListBox";
+            this.valdaAlumnerListBox.Size = new System.Drawing.Size(120, 173);
+            this.valdaAlumnerListBox.TabIndex = 12;
             // 
-            // AnsvarigPersonTxtBox
+            // label21
             // 
-            this.AnsvarigPersonTxtBox.Location = new System.Drawing.Point(10, 63);
-            this.AnsvarigPersonTxtBox.Name = "AnsvarigPersonTxtBox";
-            this.AnsvarigPersonTxtBox.Size = new System.Drawing.Size(208, 20);
-            this.AnsvarigPersonTxtBox.TabIndex = 16;
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(223, 93);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(74, 13);
+            this.label21.TabIndex = 13;
+            this.label21.Text = "Valda alumner";
             // 
-            // KontaktPersonTxtBox
+            // flyttaÖverAlumnBtn
             // 
-            this.KontaktPersonTxtBox.Location = new System.Drawing.Point(10, 104);
-            this.KontaktPersonTxtBox.Name = "KontaktPersonTxtBox";
-            this.KontaktPersonTxtBox.Size = new System.Drawing.Size(208, 20);
-            this.KontaktPersonTxtBox.TabIndex = 17;
+            this.flyttaÖverAlumnBtn.Location = new System.Drawing.Point(152, 175);
+            this.flyttaÖverAlumnBtn.Name = "flyttaÖverAlumnBtn";
+            this.flyttaÖverAlumnBtn.Size = new System.Drawing.Size(68, 30);
+            this.flyttaÖverAlumnBtn.TabIndex = 14;
+            this.flyttaÖverAlumnBtn.Text = "Uppdatera";
+            this.flyttaÖverAlumnBtn.UseVisualStyleBackColor = true;
+            this.flyttaÖverAlumnBtn.Click += new System.EventHandler(this.flyttaÖverAlumnBtn_Click);
             // 
             // MainPersonalForm
             // 
@@ -593,10 +628,13 @@
         private System.Windows.Forms.CheckedListBox AlumnCheckedListBox;
         private System.Windows.Forms.RichTextBox ändraBeskrivningTextBox;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.CheckedListBox AktivitetCheckedListBox;
         private System.Windows.Forms.TextBox ändraAnsvarigKontaktTxtBox;
         private System.Windows.Forms.TextBox ändraAnsvarigPersonTxtBox;
         private System.Windows.Forms.TextBox KontaktPersonTxtBox;
         private System.Windows.Forms.TextBox AnsvarigPersonTxtBox;
+        private System.Windows.Forms.ListBox valdaAlumnerListBox;
+        private System.Windows.Forms.ComboBox AktivitetCmbBox;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button flyttaÖverAlumnBtn;
     }
 }

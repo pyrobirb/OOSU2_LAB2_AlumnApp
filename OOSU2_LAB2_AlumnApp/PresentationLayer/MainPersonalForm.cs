@@ -34,13 +34,13 @@ namespace PresentationLayer
 
             FyllAktivitetsfält();
 
-            AktivitetCheckedListBox.Items.Clear();
+            AktivitetCmbBox.Items.Clear();
             foreach (Aktivitet aktivitet in bm.uiw.AktivitetRepository.GetAll())
             {
-                AktivitetCheckedListBox.Items.Add(aktivitet);
+                AktivitetCmbBox.Items.Add(aktivitet);
             }
-            AktivitetCheckedListBox.ValueMember = "AktivitetID";
-            AktivitetCheckedListBox.DisplayMember = "Titel";
+            AktivitetCmbBox.ValueMember = "AktivitetID";
+            AktivitetCmbBox.DisplayMember = "Titel";
 
             programFilterCmbBox.DataSource = bm.uiw.ProgramRepository.GetAll();
             programFilterCmbBox.DisplayMember = "Titel";
@@ -82,7 +82,6 @@ namespace PresentationLayer
                     Beskrivning = PlatsTxtBox.Text,
                     InformationsutskickAktivitet = new List<InformationsutskickAktivitet>(),
                     AlumnAktiviteter = new List<AlumnAktivitet>()
-
                 };
 
                 bm.uiw.AktivitetRepository.Add(aktivitet);
@@ -138,6 +137,8 @@ namespace PresentationLayer
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
+            GLOBALS.inloggadAlumn = null;
+            GLOBALS.inloggadPersonal = null;
         }
 
         private void KompetensFilterCmbBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -161,12 +162,64 @@ namespace PresentationLayer
             };
 
             Aktivitet aktivitetAttTaBort = bm.uiw.AktivitetRepository.GetById(((Aktivitet)VäljAktivitetComboBox.SelectedItem).AktivitetID);
-            
+
 
             bm.UpdateAktivitet(aktivitetAttTaBort, uppdateradAktivitet);
             bm.Commit();
 
-            MessageBox.Show("Aktiviteten " + ändraTitelTxtBox.Text +  " har redigerats");
+            MessageBox.Show("Aktiviteten " + ändraTitelTxtBox.Text + " har redigerats");
+        }
+
+        private void btnCreateAlumnCSV_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AlumnCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void flyttaÖverAlumnBtn_Click(object sender, EventArgs e)
+        {
+            foreach (Alumn alumn in AlumnCheckedListBox.CheckedItems)
+            {
+                if (!valdaAlumnerListBox.Items.Contains(alumn))
+                {
+                    List<Alumn> alumner = new List<Alumn>();
+                    foreach (Alumn alumn1 in valdaAlumnerListBox.Items)
+                    {
+                        alumner.Add(alumn1);
+                    }
+                    alumner.Add(alumn);
+                    valdaAlumnerListBox.DataSource = alumner;
+                    valdaAlumnerListBox.DisplayMember = "Förnamn";
+                    valdaAlumnerListBox.ValueMember = "AnvändarID";
+                }
+            }
+
+
+            foreach (Alumn alumn1 in valdaAlumnerListBox.Items)
+            {
+                if (!AlumnCheckedListBox.CheckedItems.Contains(alumn1))
+                {
+                    List<Alumn> valdaAlumner = new List<Alumn>();
+                    foreach (Alumn alumn in valdaAlumnerListBox.Items)
+                    {
+                        valdaAlumner.Add(alumn);
+                    }
+
+                    valdaAlumner.Remove(alumn1);
+
+                    valdaAlumnerListBox.DataSource = valdaAlumner;
+
+                }
+            }
+
+            valdaAlumnerListBox.ValueMember = "AnvändarID";
+            valdaAlumnerListBox.DisplayMember = "Förnamn";
+
         }
     }
 }
