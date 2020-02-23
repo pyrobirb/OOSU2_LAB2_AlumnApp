@@ -38,30 +38,26 @@
             this.label6 = new System.Windows.Forms.Label();
             this.PlatsTxtBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.KontaktPersonCmbBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.AnsvarigPersonCmbBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TitelAktivitetTxtBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageEditActivity = new System.Windows.Forms.TabPage();
-            this.BeskrivningÄndraTextBox = new System.Windows.Forms.RichTextBox();
+            this.ändraBeskrivningTextBox = new System.Windows.Forms.RichTextBox();
             this.VäljAktivitetComboBox = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.SlutdatumÄndraDateTime = new System.Windows.Forms.DateTimePicker();
+            this.ändraSlutdatumDateTime = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
-            this.StarttidDateTime = new System.Windows.Forms.DateTimePicker();
+            this.ändraStarttidDateTime = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.PlatsÄndraTxtBox = new System.Windows.Forms.TextBox();
+            this.ändraPlatsTxtBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.KontaktpersonComboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.AnsvarigPersonComboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.ÄndraTitelTxtBox = new System.Windows.Forms.TextBox();
+            this.ändraTitelTxtBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPageMakeEmailList = new System.Windows.Forms.TabPage();
             this.label20 = new System.Windows.Forms.Label();
@@ -75,6 +71,10 @@
             this.btnCreateAlumnCSV = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.ändraAnsvarigPersonTxtBox = new System.Windows.Forms.TextBox();
+            this.ändraAnsvarigKontaktTxtBox = new System.Windows.Forms.TextBox();
+            this.AnsvarigPersonTxtBox = new System.Windows.Forms.TextBox();
+            this.KontaktPersonTxtBox = new System.Windows.Forms.TextBox();
             this.tabControlMainAdmin.SuspendLayout();
             this.tabPageCreateActivity.SuspendLayout();
             this.tabPageEditActivity.SuspendLayout();
@@ -95,6 +95,8 @@
             // 
             // tabPageCreateActivity
             // 
+            this.tabPageCreateActivity.Controls.Add(this.KontaktPersonTxtBox);
+            this.tabPageCreateActivity.Controls.Add(this.AnsvarigPersonTxtBox);
             this.tabPageCreateActivity.Controls.Add(this.BeskrivningTextBox);
             this.tabPageCreateActivity.Controls.Add(this.SkapaAktivitetKnapp);
             this.tabPageCreateActivity.Controls.Add(this.SluttidDateTimePicker);
@@ -103,9 +105,7 @@
             this.tabPageCreateActivity.Controls.Add(this.label6);
             this.tabPageCreateActivity.Controls.Add(this.PlatsTxtBox);
             this.tabPageCreateActivity.Controls.Add(this.label5);
-            this.tabPageCreateActivity.Controls.Add(this.KontaktPersonCmbBox);
             this.tabPageCreateActivity.Controls.Add(this.label4);
-            this.tabPageCreateActivity.Controls.Add(this.AnsvarigPersonCmbBox);
             this.tabPageCreateActivity.Controls.Add(this.label3);
             this.tabPageCreateActivity.Controls.Add(this.TitelAktivitetTxtBox);
             this.tabPageCreateActivity.Controls.Add(this.label2);
@@ -184,14 +184,6 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Plats";
             // 
-            // KontaktPersonCmbBox
-            // 
-            this.KontaktPersonCmbBox.FormattingEnabled = true;
-            this.KontaktPersonCmbBox.Location = new System.Drawing.Point(10, 104);
-            this.KontaktPersonCmbBox.Name = "KontaktPersonCmbBox";
-            this.KontaktPersonCmbBox.Size = new System.Drawing.Size(208, 21);
-            this.KontaktPersonCmbBox.TabIndex = 6;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -200,14 +192,6 @@
             this.label4.Size = new System.Drawing.Size(79, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Kontakt person";
-            // 
-            // AnsvarigPersonCmbBox
-            // 
-            this.AnsvarigPersonCmbBox.FormattingEnabled = true;
-            this.AnsvarigPersonCmbBox.Location = new System.Drawing.Point(10, 64);
-            this.AnsvarigPersonCmbBox.Name = "AnsvarigPersonCmbBox";
-            this.AnsvarigPersonCmbBox.Size = new System.Drawing.Size(208, 21);
-            this.AnsvarigPersonCmbBox.TabIndex = 4;
             // 
             // label3
             // 
@@ -245,22 +229,22 @@
             // 
             // tabPageEditActivity
             // 
-            this.tabPageEditActivity.Controls.Add(this.BeskrivningÄndraTextBox);
+            this.tabPageEditActivity.Controls.Add(this.ändraAnsvarigKontaktTxtBox);
+            this.tabPageEditActivity.Controls.Add(this.ändraAnsvarigPersonTxtBox);
+            this.tabPageEditActivity.Controls.Add(this.ändraBeskrivningTextBox);
             this.tabPageEditActivity.Controls.Add(this.VäljAktivitetComboBox);
             this.tabPageEditActivity.Controls.Add(this.label15);
             this.tabPageEditActivity.Controls.Add(this.btnSaveChanges);
             this.tabPageEditActivity.Controls.Add(this.label14);
-            this.tabPageEditActivity.Controls.Add(this.SlutdatumÄndraDateTime);
+            this.tabPageEditActivity.Controls.Add(this.ändraSlutdatumDateTime);
             this.tabPageEditActivity.Controls.Add(this.label13);
-            this.tabPageEditActivity.Controls.Add(this.StarttidDateTime);
+            this.tabPageEditActivity.Controls.Add(this.ändraStarttidDateTime);
             this.tabPageEditActivity.Controls.Add(this.label12);
-            this.tabPageEditActivity.Controls.Add(this.PlatsÄndraTxtBox);
+            this.tabPageEditActivity.Controls.Add(this.ändraPlatsTxtBox);
             this.tabPageEditActivity.Controls.Add(this.label11);
-            this.tabPageEditActivity.Controls.Add(this.KontaktpersonComboBox);
             this.tabPageEditActivity.Controls.Add(this.label10);
-            this.tabPageEditActivity.Controls.Add(this.AnsvarigPersonComboBox);
             this.tabPageEditActivity.Controls.Add(this.label9);
-            this.tabPageEditActivity.Controls.Add(this.ÄndraTitelTxtBox);
+            this.tabPageEditActivity.Controls.Add(this.ändraTitelTxtBox);
             this.tabPageEditActivity.Controls.Add(this.label8);
             this.tabPageEditActivity.Location = new System.Drawing.Point(4, 22);
             this.tabPageEditActivity.Name = "tabPageEditActivity";
@@ -269,13 +253,13 @@
             this.tabPageEditActivity.Text = "Redigera aktivitet";
             this.tabPageEditActivity.UseVisualStyleBackColor = true;
             // 
-            // BeskrivningÄndraTextBox
+            // ändraBeskrivningTextBox
             // 
-            this.BeskrivningÄndraTextBox.Location = new System.Drawing.Point(250, 66);
-            this.BeskrivningÄndraTextBox.Name = "BeskrivningÄndraTextBox";
-            this.BeskrivningÄndraTextBox.Size = new System.Drawing.Size(242, 180);
-            this.BeskrivningÄndraTextBox.TabIndex = 17;
-            this.BeskrivningÄndraTextBox.Text = "";
+            this.ändraBeskrivningTextBox.Location = new System.Drawing.Point(250, 66);
+            this.ändraBeskrivningTextBox.Name = "ändraBeskrivningTextBox";
+            this.ändraBeskrivningTextBox.Size = new System.Drawing.Size(242, 180);
+            this.ändraBeskrivningTextBox.TabIndex = 17;
+            this.ändraBeskrivningTextBox.Text = "";
             // 
             // VäljAktivitetComboBox
             // 
@@ -303,6 +287,7 @@
             this.btnSaveChanges.TabIndex = 14;
             this.btnSaveChanges.Text = "Spara ändringar";
             this.btnSaveChanges.UseVisualStyleBackColor = true;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // label14
             // 
@@ -313,12 +298,12 @@
             this.label14.TabIndex = 12;
             this.label14.Text = "Beskrivning";
             // 
-            // SlutdatumÄndraDateTime
+            // ändraSlutdatumDateTime
             // 
-            this.SlutdatumÄndraDateTime.Location = new System.Drawing.Point(17, 265);
-            this.SlutdatumÄndraDateTime.Name = "SlutdatumÄndraDateTime";
-            this.SlutdatumÄndraDateTime.Size = new System.Drawing.Size(212, 20);
-            this.SlutdatumÄndraDateTime.TabIndex = 11;
+            this.ändraSlutdatumDateTime.Location = new System.Drawing.Point(17, 265);
+            this.ändraSlutdatumDateTime.Name = "ändraSlutdatumDateTime";
+            this.ändraSlutdatumDateTime.Size = new System.Drawing.Size(212, 20);
+            this.ändraSlutdatumDateTime.TabIndex = 11;
             // 
             // label13
             // 
@@ -329,12 +314,12 @@
             this.label13.TabIndex = 10;
             this.label13.Text = "Datum och sluttid";
             // 
-            // StarttidDateTime
+            // ändraStarttidDateTime
             // 
-            this.StarttidDateTime.Location = new System.Drawing.Point(17, 226);
-            this.StarttidDateTime.Name = "StarttidDateTime";
-            this.StarttidDateTime.Size = new System.Drawing.Size(212, 20);
-            this.StarttidDateTime.TabIndex = 9;
+            this.ändraStarttidDateTime.Location = new System.Drawing.Point(17, 226);
+            this.ändraStarttidDateTime.Name = "ändraStarttidDateTime";
+            this.ändraStarttidDateTime.Size = new System.Drawing.Size(212, 20);
+            this.ändraStarttidDateTime.TabIndex = 9;
             // 
             // label12
             // 
@@ -345,12 +330,12 @@
             this.label12.TabIndex = 8;
             this.label12.Text = "Datum och starttid";
             // 
-            // PlatsÄndraTxtBox
+            // ändraPlatsTxtBox
             // 
-            this.PlatsÄndraTxtBox.Location = new System.Drawing.Point(17, 186);
-            this.PlatsÄndraTxtBox.Name = "PlatsÄndraTxtBox";
-            this.PlatsÄndraTxtBox.Size = new System.Drawing.Size(212, 20);
-            this.PlatsÄndraTxtBox.TabIndex = 7;
+            this.ändraPlatsTxtBox.Location = new System.Drawing.Point(17, 186);
+            this.ändraPlatsTxtBox.Name = "ändraPlatsTxtBox";
+            this.ändraPlatsTxtBox.Size = new System.Drawing.Size(212, 20);
+            this.ändraPlatsTxtBox.TabIndex = 7;
             // 
             // label11
             // 
@@ -361,14 +346,6 @@
             this.label11.TabIndex = 6;
             this.label11.Text = "Plats";
             // 
-            // KontaktpersonComboBox
-            // 
-            this.KontaktpersonComboBox.FormattingEnabled = true;
-            this.KontaktpersonComboBox.Location = new System.Drawing.Point(17, 146);
-            this.KontaktpersonComboBox.Name = "KontaktpersonComboBox";
-            this.KontaktpersonComboBox.Size = new System.Drawing.Size(212, 21);
-            this.KontaktpersonComboBox.TabIndex = 5;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -377,14 +354,6 @@
             this.label10.Size = new System.Drawing.Size(76, 13);
             this.label10.TabIndex = 4;
             this.label10.Text = "Kontaktperson";
-            // 
-            // AnsvarigPersonComboBox
-            // 
-            this.AnsvarigPersonComboBox.FormattingEnabled = true;
-            this.AnsvarigPersonComboBox.Location = new System.Drawing.Point(17, 106);
-            this.AnsvarigPersonComboBox.Name = "AnsvarigPersonComboBox";
-            this.AnsvarigPersonComboBox.Size = new System.Drawing.Size(212, 21);
-            this.AnsvarigPersonComboBox.TabIndex = 3;
             // 
             // label9
             // 
@@ -395,12 +364,12 @@
             this.label9.TabIndex = 2;
             this.label9.Text = "Ansvarig person";
             // 
-            // ÄndraTitelTxtBox
+            // ändraTitelTxtBox
             // 
-            this.ÄndraTitelTxtBox.Location = new System.Drawing.Point(17, 66);
-            this.ÄndraTitelTxtBox.Name = "ÄndraTitelTxtBox";
-            this.ÄndraTitelTxtBox.Size = new System.Drawing.Size(212, 20);
-            this.ÄndraTitelTxtBox.TabIndex = 1;
+            this.ändraTitelTxtBox.Location = new System.Drawing.Point(17, 66);
+            this.ändraTitelTxtBox.Name = "ändraTitelTxtBox";
+            this.ändraTitelTxtBox.Size = new System.Drawing.Size(212, 20);
+            this.ändraTitelTxtBox.TabIndex = 1;
             // 
             // label8
             // 
@@ -532,6 +501,34 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // ändraAnsvarigPersonTxtBox
+            // 
+            this.ändraAnsvarigPersonTxtBox.Location = new System.Drawing.Point(17, 106);
+            this.ändraAnsvarigPersonTxtBox.Name = "ändraAnsvarigPersonTxtBox";
+            this.ändraAnsvarigPersonTxtBox.Size = new System.Drawing.Size(212, 20);
+            this.ändraAnsvarigPersonTxtBox.TabIndex = 18;
+            // 
+            // ändraAnsvarigKontaktTxtBox
+            // 
+            this.ändraAnsvarigKontaktTxtBox.Location = new System.Drawing.Point(17, 147);
+            this.ändraAnsvarigKontaktTxtBox.Name = "ändraAnsvarigKontaktTxtBox";
+            this.ändraAnsvarigKontaktTxtBox.Size = new System.Drawing.Size(212, 20);
+            this.ändraAnsvarigKontaktTxtBox.TabIndex = 19;
+            // 
+            // AnsvarigPersonTxtBox
+            // 
+            this.AnsvarigPersonTxtBox.Location = new System.Drawing.Point(10, 63);
+            this.AnsvarigPersonTxtBox.Name = "AnsvarigPersonTxtBox";
+            this.AnsvarigPersonTxtBox.Size = new System.Drawing.Size(208, 20);
+            this.AnsvarigPersonTxtBox.TabIndex = 16;
+            // 
+            // KontaktPersonTxtBox
+            // 
+            this.KontaktPersonTxtBox.Location = new System.Drawing.Point(10, 104);
+            this.KontaktPersonTxtBox.Name = "KontaktPersonTxtBox";
+            this.KontaktPersonTxtBox.Size = new System.Drawing.Size(208, 20);
+            this.KontaktPersonTxtBox.TabIndex = 17;
+            // 
             // MainPersonalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -565,25 +562,21 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox PlatsTxtBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox KontaktPersonCmbBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox AnsvarigPersonCmbBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TitelAktivitetTxtBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnLogOut;
-        private System.Windows.Forms.DateTimePicker SlutdatumÄndraDateTime;
+        private System.Windows.Forms.DateTimePicker ändraSlutdatumDateTime;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker StarttidDateTime;
+        private System.Windows.Forms.DateTimePicker ändraStarttidDateTime;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox PlatsÄndraTxtBox;
+        private System.Windows.Forms.TextBox ändraPlatsTxtBox;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox KontaktpersonComboBox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox AnsvarigPersonComboBox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox ÄndraTitelTxtBox;
+        private System.Windows.Forms.TextBox ändraTitelTxtBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox VäljAktivitetComboBox;
         private System.Windows.Forms.Label label15;
@@ -598,8 +591,12 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox KompetensFilterCmbBox;
         private System.Windows.Forms.CheckedListBox AlumnCheckedListBox;
-        private System.Windows.Forms.RichTextBox BeskrivningÄndraTextBox;
+        private System.Windows.Forms.RichTextBox ändraBeskrivningTextBox;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.CheckedListBox AktivitetCheckedListBox;
+        private System.Windows.Forms.TextBox ändraAnsvarigKontaktTxtBox;
+        private System.Windows.Forms.TextBox ändraAnsvarigPersonTxtBox;
+        private System.Windows.Forms.TextBox KontaktPersonTxtBox;
+        private System.Windows.Forms.TextBox AnsvarigPersonTxtBox;
     }
 }

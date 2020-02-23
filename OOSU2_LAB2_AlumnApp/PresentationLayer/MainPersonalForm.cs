@@ -67,15 +67,15 @@ namespace PresentationLayer
 
         private void SkapaAktivitetKnapp_Click(object sender, EventArgs e)
         {
-            if (TitelAktivitetTxtBox.Text == "" || AnsvarigPersonCmbBox.Text == "" || KontaktPersonCmbBox.Text == "" || PlatsTxtBox.Text == "" || PlatsTxtBox.Text == "")
+            if (TitelAktivitetTxtBox.Text == "" || AnsvarigPersonTxtBox.Text == "" || KontaktPersonTxtBox.Text == "" || PlatsTxtBox.Text == "" || PlatsTxtBox.Text == "")
                 MessageBox.Show("Var vänlig fyll i alla textrutor");
             else
             {
                 Aktivitet aktivitet = new Aktivitet()
                 {
                     Titel = TitelAktivitetTxtBox.Text,
-                    Ansvarig = AnsvarigPersonCmbBox.Text,
-                    Kontaktperson = KontaktPersonCmbBox.Text,
+                    Ansvarig = AnsvarigPersonTxtBox.Text,
+                    Kontaktperson = KontaktPersonTxtBox.Text,
                     Plats = PlatsTxtBox.Text,
                     Startdatum = StarttidDateTimePicker.Value,
                     Slutdatum = SluttidDateTimePicker.Value,
@@ -87,7 +87,7 @@ namespace PresentationLayer
 
                 bm.uiw.AktivitetRepository.Add(aktivitet);
                 MessageBox.Show("Aktiviteten har skapats");
-                bm.uiw.Commit();
+                bm.Commit();
 
             }
         }
@@ -100,13 +100,13 @@ namespace PresentationLayer
         public void FyllAktivitetsfält()
         {
             Aktivitet AktuellAktivitet = bm.uiw.AktivitetRepository.GetById(((Aktivitet)VäljAktivitetComboBox.SelectedItem).AktivitetID);
-            ÄndraTitelTxtBox.Text = AktuellAktivitet.Titel;
-            AnsvarigPersonComboBox.Text = AktuellAktivitet.Ansvarig;
-            KontaktpersonComboBox.Text = AktuellAktivitet.Kontaktperson;
-            PlatsÄndraTxtBox.Text = AktuellAktivitet.Plats;
-            StarttidDateTime.Value = AktuellAktivitet.Startdatum;
-            SlutdatumÄndraDateTime.Value = AktuellAktivitet.Slutdatum;
-            BeskrivningÄndraTextBox.Text = AktuellAktivitet.Beskrivning;
+            ändraTitelTxtBox.Text = AktuellAktivitet.Titel;
+            ändraAnsvarigPersonTxtBox.Text = AktuellAktivitet.Ansvarig;
+            ändraAnsvarigKontaktTxtBox.Text = AktuellAktivitet.Kontaktperson;
+            ändraPlatsTxtBox.Text = AktuellAktivitet.Plats;
+            ändraStarttidDateTime.Value = AktuellAktivitet.Startdatum;
+            ändraSlutdatumDateTime.Value = AktuellAktivitet.Slutdatum;
+            ändraBeskrivningTextBox.Text = AktuellAktivitet.Beskrivning;
         }
 
         private void programFilterCmbBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -143,6 +143,30 @@ namespace PresentationLayer
         private void KompetensFilterCmbBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            Aktivitet uppdateradAktivitet = new Aktivitet()
+            {
+                Titel = ändraTitelTxtBox.Text,
+                Ansvarig = ändraAnsvarigPersonTxtBox.Text,
+                Kontaktperson = ändraAnsvarigKontaktTxtBox.Text,
+                Plats = ändraPlatsTxtBox.Text,
+                Startdatum = ändraStarttidDateTime.Value,
+                Slutdatum = ändraSlutdatumDateTime.Value,
+                Beskrivning = ändraBeskrivningTextBox.Text,
+                InformationsutskickAktivitet = new List<InformationsutskickAktivitet>(),
+                AlumnAktiviteter = new List<AlumnAktivitet>()
+            };
+
+            Aktivitet aktivitetAttTaBort = bm.uiw.AktivitetRepository.GetById(((Aktivitet)VäljAktivitetComboBox.SelectedItem).AktivitetID);
+            
+
+            bm.UpdateAktivitet(aktivitetAttTaBort, uppdateradAktivitet);
+            bm.Commit();
+
+            MessageBox.Show("Aktiviteten " + ändraTitelTxtBox.Text +  " har redigerats");
         }
     }
 }

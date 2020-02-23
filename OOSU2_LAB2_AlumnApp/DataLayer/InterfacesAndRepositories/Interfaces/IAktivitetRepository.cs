@@ -9,6 +9,7 @@ namespace DataLayer.InterfacesAndRepositories.Interfaces
 {
     public interface IAktivitetRepository : IRepository<Aktivitet>
     {
-
+        void UpdateAktivitet(Aktivitet aktivitet, Aktivitet nyaktivitet);
+        
     }
 }

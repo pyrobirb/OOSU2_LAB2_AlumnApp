@@ -44,6 +44,12 @@ namespace BusinessLayer
             return alumnerMedProgram;
         }
 
+
+        public void UpdateAktivitet(Aktivitet aktivitet, Aktivitet nyaktivitet)
+        {
+            uiw.AktivitetRepository.UpdateAktivitet(aktivitet, nyaktivitet);
+        }
+
         //public List<Alumn> HämtaAlumnerMedKompetens(Kompetens kompetens)
         //{
         //    List<Alumn> alumnerMedKompetens = new List<Alumn>();
