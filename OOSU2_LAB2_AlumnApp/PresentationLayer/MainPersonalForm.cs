@@ -1,6 +1,7 @@
 ﻿using BusinessEntities.Contexts.Junction;
 using BusinessEntities.Models;
 using BusinessLayer;
+using DataLayer.Contexts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,8 @@ namespace PresentationLayer
     public partial class MainPersonalForm : Form
     {
         BusinessManager bm = new BusinessManager();
+        DatabaseContext dbc = new DatabaseContext();
+
         public MainPersonalForm()
         {
             InitializeComponent();
@@ -172,13 +175,50 @@ namespace PresentationLayer
 
         private void btnCreateAlumnCSV_Click(object sender, EventArgs e)
         {
+            Informationsutskick informationsutskick = new Informationsutskick()
+            {
+                utskicksdatum = DateTime.Now
+            };
+            bm.uiw.InformationsutskickRepository.Add(informationsutskick);
+            bm.Commit();
 
+            InformationsutskickAktivitet informationsutskickAktivitet = new InformationsutskickAktivitet()
+            {
+                AktivitetID = (bm.uiw.AktivitetRepository.GetById(((Aktivitet)AktivitetCmbBox.SelectedItem).AktivitetID)).AktivitetID,
+                InformationsutskickID = informationsutskick.utskicksID
+            };
+            dbc.InformationsutskickAktivitet.Add(informationsutskickAktivitet);
+            dbc.SaveChanges();
+
+            foreach (Alumn alumn in valdaAlumnerListBox.Items)
+            {
+                InformationsutskickAlumn informationsutskickAlumn = new InformationsutskickAlumn()
+                {
+                    AlumnID = (bm.uiw.AlumnRepository.GetById(alumn.AnvändarID)).AnvändarID,
+                    InformationsutskickID = (bm.uiw.InformationsutskickRepository.GetById(informationsutskick.utskicksID)).utskicksID
+                };
+                dbc.InformationsutskickAlumn.Add(informationsutskickAlumn);
+            }
+
+            bm.Commit();
+            dbc.SaveChanges();
+
+            List<Alumn> alumner = new List<Alumn>();
+            foreach (Alumn alumn in valdaAlumnerListBox.Items)
+            {
+                alumner.Add(alumn);
+            }
+
+            bm.SkrivaAlumnAktivitetTillCSVFil(((Aktivitet)AktivitetCmbBox.SelectedItem).Titel, alumner);
+            MessageBox.Show("Aktivitetens titel och Alumnernas eposadresser har blivit skrivna till CSV Filen!");
         }
 
+
+        
         private void AlumnCheckedListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            
+
+
         }
 
         private void flyttaÖverAlumnBtn_Click(object sender, EventArgs e)

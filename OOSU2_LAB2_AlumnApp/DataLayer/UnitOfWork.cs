@@ -20,6 +20,7 @@ namespace DataLayer
             AktivitetRepository = new AktivitetRepository(_context);
             KompetensRepository = new KompetensRepository(_context);
             ProgramRepository = new ProgramRepository(_context);
+            InformationsutskickRepository = new InformationsutskickRepository(_context);
         }
 
 
@@ -28,6 +29,7 @@ namespace DataLayer
         public IAktivitetRepository AktivitetRepository { get; set; }
         public IKompetensRepository KompetensRepository { get; set; }
         public IProgramRepository ProgramRepository { get; set; }
+        public IInformationsutskickRepository InformationsutskickRepository{ get; set; }
 
         public void Commit()
         {

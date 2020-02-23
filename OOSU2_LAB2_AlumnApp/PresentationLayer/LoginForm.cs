@@ -16,15 +16,15 @@ namespace PresentationLayer
 {
     public partial class LoginForm : Form
     {
-        DatabaseContext akc = new DatabaseContext();
+        DatabaseContext dbc = new DatabaseContext();
         BusinessManager bm = new BusinessManager();
 
         public LoginForm()
         {
             InitializeComponent();
-            akc.Database.EnsureDeleted();
-            akc.Database.EnsureCreated();
-            AlumnKontaktSeed.Populate(akc);
+            dbc.Database.EnsureDeleted();
+            dbc.Database.EnsureCreated();
+            AlumnKontaktSeed.Populate(dbc);
             userNameTextBox.Text = "einar1";
             passwordTextBox.Text = "einar2";
 
@@ -41,8 +41,6 @@ namespace PresentationLayer
                 "\n\nGodkänner du villkoren?", "Villkor enligt GDPR för AlumnAppen", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 ShowForm(new CreateUserForm());
-                //CreateUserForm createUserForm = new CreateUserForm();
-                //createUserForm.ShowDialog();
             }
             else
             {
@@ -100,8 +98,8 @@ namespace PresentationLayer
         {
             if (e.KeyCode == Keys.Enter)
             {
-                e.SuppressKeyPress = true;
                 e.Handled = true;
+                e.SuppressKeyPress = true;
 
                 ValidateUserLogin(userNameTextBox.Text, passwordTextBox.Text);
                 ValidateLogIn_OpenMainForm();

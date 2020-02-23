@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer.InterfacesAndRepositories.Interfaces
+namespace DataLayer
 {
-    public interface IInformationsutskickRepository : IRepository<Informationsutskick>
+    public interface IIOFileSystem
     {
+        void SkrivaAlumnAktivitetTillCSVFil(string Aktivitettitel, List<Alumn> alumnEposter);
     }
 }

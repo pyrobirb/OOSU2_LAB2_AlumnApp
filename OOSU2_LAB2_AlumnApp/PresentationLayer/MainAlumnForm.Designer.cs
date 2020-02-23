@@ -36,6 +36,7 @@
             this.listBoxUpcomminActivites = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageBookedActivities = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
             this.btnCancelBookedActivity = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.listBoxBookedActivityInfo = new System.Windows.Forms.ListBox();
@@ -62,7 +63,7 @@
             this.comboBoxExamsAtUniversityOfBorås = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPageUserData = new System.Windows.Forms.TabPage();
-            this.btnDeleteAccount = new System.Windows.Forms.Button();
+            this.raderaKontoAlumnBtn = new System.Windows.Forms.Button();
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -71,7 +72,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
             this.tabControlAlumn.SuspendLayout();
             this.tabPageUpcommingActivities.SuspendLayout();
             this.tabPageBookedActivities.SuspendLayout();
@@ -165,6 +165,15 @@
             this.tabPageBookedActivities.TabIndex = 1;
             this.tabPageBookedActivities.Text = "Bokade aktiviteter";
             this.tabPageBookedActivities.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(12, 334);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(364, 13);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Alla aktiviteter som är kopplade till alumnen (den som den har registrerat sig i";
             // 
             // btnCancelBookedActivity
             // 
@@ -399,7 +408,7 @@
             // 
             // tabPageUserData
             // 
-            this.tabPageUserData.Controls.Add(this.btnDeleteAccount);
+            this.tabPageUserData.Controls.Add(this.raderaKontoAlumnBtn);
             this.tabPageUserData.Controls.Add(this.btnSaveChanges);
             this.tabPageUserData.Controls.Add(this.textBox3);
             this.tabPageUserData.Controls.Add(this.label14);
@@ -414,14 +423,15 @@
             this.tabPageUserData.Text = "Användaruppgifter";
             this.tabPageUserData.UseVisualStyleBackColor = true;
             // 
-            // btnDeleteAccount
+            // raderaKontoAlumnBtn
             // 
-            this.btnDeleteAccount.Location = new System.Drawing.Point(7, 339);
-            this.btnDeleteAccount.Name = "btnDeleteAccount";
-            this.btnDeleteAccount.Size = new System.Drawing.Size(138, 23);
-            this.btnDeleteAccount.TabIndex = 7;
-            this.btnDeleteAccount.Text = "Radera konto";
-            this.btnDeleteAccount.UseVisualStyleBackColor = true;
+            this.raderaKontoAlumnBtn.Location = new System.Drawing.Point(7, 339);
+            this.raderaKontoAlumnBtn.Name = "raderaKontoAlumnBtn";
+            this.raderaKontoAlumnBtn.Size = new System.Drawing.Size(138, 23);
+            this.raderaKontoAlumnBtn.TabIndex = 7;
+            this.raderaKontoAlumnBtn.Text = "Radera konto";
+            this.raderaKontoAlumnBtn.UseVisualStyleBackColor = true;
+            this.raderaKontoAlumnBtn.Click += new System.EventHandler(this.raderaKontoAlumnBtn_Click);
             // 
             // btnSaveChanges
             // 
@@ -490,15 +500,6 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(12, 334);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(364, 13);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Alla aktiviteter som är kopplade till alumnen (den som den har registrerat sig i";
-            // 
             // MainAlumnForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -557,7 +558,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxExamsAtUniversityOfBorås;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnDeleteAccount;
+        private System.Windows.Forms.Button raderaKontoAlumnBtn;
         private System.Windows.Forms.Button btnSaveChanges;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label14;

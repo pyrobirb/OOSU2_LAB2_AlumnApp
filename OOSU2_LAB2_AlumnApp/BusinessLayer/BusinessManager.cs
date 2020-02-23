@@ -12,7 +12,7 @@ namespace BusinessLayer
 {
     public class BusinessManager
     {
-       
+        IOFileSystem iof = new IOFileSystem();
         public UnitOfWork uiw = new UnitOfWork(new DatabaseContext());
 
 
@@ -63,6 +63,11 @@ namespace BusinessLayer
         public void Commit()
         {
             uiw.Commit();
+        }
+
+        public void SkrivaAlumnAktivitetTillCSVFil(string Aktivitettitel, List<Alumn> alumner)
+        {
+            iof.SkrivaAlumnAktivitetTillCSVFil(Aktivitettitel, alumner);
         }
     }
 }

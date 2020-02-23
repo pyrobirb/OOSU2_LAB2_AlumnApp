@@ -98,7 +98,7 @@ namespace DataLayer.Seed
             {
                 Alumn = alumn1,
                 Kompetens = kompetens2
-            }); 
+            });
             databaseContext.AlumnKompetens.Add(new AlumnKompetens()
             {
                 Alumn = alumn2,
